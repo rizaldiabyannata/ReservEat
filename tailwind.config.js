@@ -6,7 +6,15 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                "peachy-brown": "#F2CA99",
+            },
+            fonts: {
+                primary: ["Montserrat", "sans-serif"],
+                secondary: ["Quicksand", "serif"],
+            },
+        },
     },
     plugins: [],
 };
