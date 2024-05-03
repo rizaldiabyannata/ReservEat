@@ -9,14 +9,14 @@
 </head>
 
 <body class="font-['Montserrat']">
-    <nav class="bg-peachy-brown h-16 flex flex-row justify-between items-center px-10 py-4">
+    <nav class="bg-peachy-brown h-16 flex flex-row justify-between items-center px-8 py-4">
         <div class="flex flex-row space-x-2 items-center">
             <img class="w-12" src="{{ URL::to('/assets/images/weblogo.png') }}" alt="logo">
-            <h2 class="text-2xl font-bold">ReservEat</h2>
+            <h2 class="text-2xl font-bold hidden sm:flex">ReservEat</h2>
         </div>
-        <div class="flex space-x-10 text-lg">
-            <a class="hover:text-white" href="">Login</a>
-            <a class="hover:text-white" href="">Register</a>
+        <div class="flex space-x-6 text-base">
+            <a class="hover:text-white" href="{{ url('/login') }}">Login</a>
+            <a class="hover:text-white" href="{{ url('/register') }}">Register</a>
         </div>
     </nav>
 
