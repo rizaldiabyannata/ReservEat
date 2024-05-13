@@ -16,37 +16,34 @@
             <form action="/admin/myprofile" method="GET">
                 @csrf
                 <div class="mb-4">
-                    <label for="firstName" class="block font-bold mb-2">First Name</label>
-                    <input type="text" id="firstName" name="firstName" class="border border-gray-400 p-2 w-full" value="{{ $user->firstName }}" required>
-                </div>
-                <div class="mb-4">
-                    <label for="lastName" class="block font-bold mb-2">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" class="border border-gray-400 p-2 w-full" value="{{ $user->lastName }}" required>
+                    <label for="firstName" class="block font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->name }}" required>
                 </div>
                 <div class="mb-4">
                     <label for="phone" class="block font-bold mb-2">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="border border-gray-400 p-2 w-full" value="{{ $user->phone }}" required>
+                    <input type="tel" id="phone" name="phone" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->phone }}" required>
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block font-bold mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="border border-gray-400 p-2 w-full" value="{{ $user->email }}" required>
+                    <input type="email" id="email" name="email" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->email }}" required>
                 </div>
                 <div class="mb-4">
                     <label for="password" class="block font-bold mb-2">Password</label>
-                    <input type="password" id="password" name="password" class="border border-gray-400 p-2 w-full" value="{{ $user->password }}" required>
+                    <input type="password" id="password" name="password" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->password }}" required>
                 </div>
                 <div class="mb-4">
                     <label for="changePassword" class="block font-bold mb-2">Change Password</label>
-                    <input type="password" id="changePassword" name="changePassword" class="border border-gray-400 p-2 w-full">
+                    <input type="password" id="changePassword" name="changePassword" class="border border-gray-400 p-2 w-full rounded-md">
                 </div>
                 <div class="mb-4">
                     <label for="confirmPassword" class="block font-bold mb-2">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" class="border border-gray-400 p-2 w-full">
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="border border-gray-400 p-2 w-full rounded-md">
                 </div>
                 <div class="mb-4">
                     <label for="role" class="block font-bold mb-2">Role</label>
-                    <select id="role" name="role" class="border border-gray-400 p-2 w-full">
+                    <select id="role" name="role" class="border border-gray-400 p-2 w-full rounded-md">
                         <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Admin</option>
+                        <option value="restaurant" {{ $user->role === 'restaurant' ? 'selected' : '' }}>User</option>
                         <option value="user" {{ $user->role === 'user' ? 'selected' : '' }}>User</option>
                     </select>
                 </div>
