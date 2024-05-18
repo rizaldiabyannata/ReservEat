@@ -12,7 +12,7 @@
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <!-- <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" /> -->
+    <!-- <link href="{{asset('css/soft-ui-dashboard-tailwind.css')}}" rel="stylesheet" /> -->
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
     @vite('resources/css/app.css')
     @vite('resources\css\soft-ui-dashboard-tailwind.css')
@@ -1174,12 +1174,12 @@
     </div>
 </body>
 <!-- plugin for charts  -->
-<script src="../assets/js/plugins/chartjs.min.js" async></script>
+<script src="{{asset('js/plugins/chartjs.min.js')}}" async></script>
 <!-- plugin for scrollbar  -->
-<script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
+<script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}" async></script>
 <!-- github button -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- main script file  -->
-<script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
+<script src="{{asset('js/soft-ui-dashboard-tailwind.js?v=1.0.5')}}" async></script>
 
 </html>
