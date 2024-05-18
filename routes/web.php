@@ -25,11 +25,12 @@ Route::get('/admin/categorys/japanese', [AdminCategoryController::class, 'tableL
 
 Route::get('/admin/myprofile', [AdminProfileController::class, 'index']);
 
-Route::get('/restaurant/dashboard', [RestaurantHomeController::class, 'index']);
+Route::get('/restaurantadmin/dashboard', [RestaurantHomeController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'auth']);
 
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/logout', [LoginController::class, 'logout']);

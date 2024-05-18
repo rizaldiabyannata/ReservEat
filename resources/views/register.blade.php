@@ -26,44 +26,53 @@
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm font-['Quicksand']">
-            <form class="space-y-6" action="#" method="POST">
+            <form class="space-y-6" action="{{ route(register.store) }}" method="POST">
+                @csrf
                 <div>
-                    <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Full name</label>
+                    <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Full name</label>
                     <div class="mt-2">
                         <input id="first-name" name="name" type="text" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        @error('name')
+                        <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                     <div class="mt-2">
                         <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        @error('email')
+                        <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div>
                     <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone</label>
                     <div class="mt-2">
-                        <input id="phone" name="phone" type="number" autocomplete="phone" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <input id="phone" name="phone" type="text" autocomplete="phone" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        @error('phone')
+                        <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
-                <div>
-                    <label for="confirm-password" class="block text-sm font-medium leading-6 text-gray-900">Phone</label>
-                    <div class="mt-2">
-                        <input id="confirm-password" name="confirm-password" type="number" max="12" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
                 <div>
                     <div class="flex items-center justify-between">
                         <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                     </div>
                     <div class="mt-2">
                         <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        @error('password')
+                        <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div>
                     <label for="confirm-password" class="block text-sm font-medium leading-6 text-gray-900">Confirm Password</label>
                     <div class="mt-2">
                         <input id="confirm-password" name="confirm-password" type="password" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        @error('confirm-password')
+                        <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
@@ -80,10 +89,6 @@
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
-    }
-
-    input[type=number] {
-        -moz-appearance: textfield;
     }
 </style>
 
