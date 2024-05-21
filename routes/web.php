@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RestaurantHomeController;
+use App\Http\Controllers\RestaurantMenuController;
 use App\Http\Middleware\ValidateRole;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ Route::get('/admin/categorys/japanese', [AdminCategoryController::class, 'tableL
 Route::get('/admin/myprofile', [AdminProfileController::class, 'index']);
 
 Route::get('/restaurantadmin/dashboard', [RestaurantHomeController::class, 'index']);
+Route::get('/restaurantadmin/addmenu', [RestaurantMenuController::class, 'addMenu']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'auth']);

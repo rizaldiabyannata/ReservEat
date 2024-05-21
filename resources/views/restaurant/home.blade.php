@@ -24,8 +24,8 @@
         <div class="h-19.5">
             <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
             <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-                <img src="../assets/img/logo-ct.png" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
-                <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Soft UI Dashboard</span>
+                <img src="{{URL::to('/assets/images/weblogo.png')}}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8" alt="main_logo" />
+                <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Restaurant Dashboard</span>
             </a>
         </div>
 
@@ -35,7 +35,7 @@
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full">
                     <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors" href="../pages/dashboard.html">
-                        <div class="bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                        <div class="bg-gradient-to-tl  from-[#A4DCD0] to-[#91C4D7] shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                             <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>shop</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -215,21 +215,21 @@
         <div class="mx-4">
             <!-- load phantom colors for card after: -->
             <p class="invisible hidden text-gray-800 text-red-500 text-red-600 after:bg-gradient-to-tl after:from-gray-900 after:to-slate-800 after:bg-gradient-to-tl after:from-blue-600 after:to-cyan-400 after:bg-gradient-to-tl after:from-red-500 after:to-yellow-400 after:bg-gradient-to-tl after:from-green-600 after:to-lime-400 after:bg-gradient-to-tl after:from-red-600 after:to-rose-400 after:bg-gradient-to-tl after:from-slate-600 after:to-slate-300 text-lime-500 text-cyan-500 text-slate-400 text-fuchsia-500"></p>
-            <div class="after:opacity-65 after:bg-gradient-to-tl after:from-slate-600 after:to-slate-300 relative flex min-w-0 flex-col items-center break-words rounded-2xl border-0 border-solid border-blue-900 bg-white bg-clip-border shadow-none after:absolute after:top-0 after:bottom-0 after:left-0 after:z-10 after:block after:h-full after:w-full after:rounded-2xl after:content-['']" sidenav-card>
+            <div class="after:opacity-65 after:bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7] relative flex min-w-0 flex-col items-center break-words rounded-2xl border-0 border-solid border-blue-900 bg-white bg-clip-border shadow-none after:absolute after:top-0 after:bottom-0 after:left-0 after:z-10 after:block after:h-full after:w-full after:rounded-2xl after:content-['']" sidenav-card>
                 <div class="mb-7.5 absolute h-full w-full rounded-2xl bg-cover bg-center" style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
                 <div class="relative z-20 flex-auto w-full p-4 text-left text-white">
                     <div class="flex items-center justify-center w-8 h-8 mb-4 text-center bg-white bg-center rounded-lg icon shadow-soft-2xl">
                         <i class="top-0 z-10 text-transparent ni leading-none ni-diamond text-lg bg-gradient-to-tl from-slate-600 to-slate-300 bg-clip-text opacity-80" sidenav-card-icon></i>
                     </div>
                     <div class="transition-all duration-200 ease-nav-brand">
-                        <h6 class="mb-0 text-white">Need help?</h6>
-                        <p class="mt-0 mb-4 font-semibold leading-tight text-xs">Please check our docs</p>
-                        <a href="https://www.creative-tim.com/learning-lab/tailwind/html/quick-start/soft-ui-dashboard/" target="_blank" class="inline-block w-full px-8 py-2 mb-0 font-bold text-center text-black uppercase transition-all ease-in bg-white border-0 border-white rounded-lg shadow-soft-md bg-150 leading-pro text-xs hover:shadow-soft-2xl hover:scale-102">Documentation</a>
+                        <h6 class="mb-0 text-white">Butuh bantuan ?</h6>
+                        <p class="mt-0 mb-4 font-semibold leading-tight text-xs">kami akan membantu anda</p>
+                        <a href="https://www.creative-tim.com/learning-lab/tailwind/html/quick-start/soft-ui-dashboard/" target="_blank" class="inline-block w-full px-8 py-2 mb-0 font-bold text-center text-black uppercase transition-all ease-in bg-white border-0 border-white rounded-lg shadow-soft-md bg-150 leading-pro text-xs hover:shadow-soft-2xl hover:scale-102">bantuan</a>
                     </div>
                 </div>
             </div>
             <!-- pro btn  -->
-            <a class="inline-block w-full px-6 py-3 my-4 font-bold text-center text-white uppercase align-middle transition-all ease-in border-0 rounded-lg select-none shadow-soft-md bg-150 bg-x-25 leading-pro text-xs bg-gradient-to-tl from-purple-700 to-pink-500 hover:shadow-soft-2xl hover:scale-102" target="_blank" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-tailwind?ref=sidebarfree">Upgrade to pro</a>
+            <a class="inline-block w-full px-6 py-3 my-4 font-bold text-center text-white uppercase align-middle transition-all ease-in border-0 rounded-lg select-none shadow-soft-md bg-150 bg-x-25 leading-pro text-xs bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7] hover:shadow-soft-2xl hover:scale-102" target="_blank" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-tailwind?ref=sidebarfree">keluar</a>
         </div>
     </aside>
 
@@ -376,18 +376,15 @@
                     <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
                         <div class="flex-auto p-4">
                             <div class="flex flex-row -mx-3">
-                                <div class="flex-none w-2/3 max-w-full px-3">
+                                <div class="flex justify-start items-center w-2/3 max-w-full px-3">
                                     <div>
-                                        <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Money</p>
-                                        <h5 class="mb-0 font-bold">
-                                            $53,000
-                                            <span class="leading-normal text-sm font-weight-bolder text-lime-500">+55%</span>
-                                        </h5>
+                                        <p class="mb-0 font-sans font-bold leading-normal text-lg ">dibooking</p>
                                     </div>
                                 </div>
                                 <div class="px-3 text-right basis-1/3">
-                                    <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
-                                        <i class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
+                                    <div class="flex justify-center items-center w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7]" >
+                                        <h5 class="mb-0 font-bold">5</h5>
+                                        <i  class="ni leading-none ni-money-coins text-lg relative top-3.5 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -400,17 +397,14 @@
                     <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
                         <div class="flex-auto p-4">
                             <div class="flex flex-row -mx-3">
-                                <div class="flex-none w-2/3 max-w-full px-3">
+                                <div class="flex justify-start items-center w-2/3 max-w-full px-3">
                                     <div>
-                                        <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Users</p>
-                                        <h5 class="mb-0 font-bold">
-                                            2,300
-                                            <span class="leading-normal text-sm font-weight-bolder text-lime-500">+3%</span>
-                                        </h5>
+                                        <p class="mb-0 font-sans font-bold leading-normal text-lg">dibatalkan</p>
                                     </div>
                                 </div>
                                 <div class="px-3 text-right basis-1/3">
-                                    <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                                <div class="flex justify-center items-center w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7]" >
+                                <h5 class="mb-0 font-bold">5</h5>
                                         <i class="ni leading-none ni-world text-lg relative top-3.5 text-white"></i>
                                     </div>
                                 </div>
@@ -424,17 +418,18 @@
                     <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
                         <div class="flex-auto p-4">
                             <div class="flex flex-row -mx-3">
-                                <div class="flex-none w-2/3 max-w-full px-3">
+                            <div class="flex justify-start items-center w-2/3 max-w-full px-3">
                                     <div>
-                                        <p class="mb-0 font-sans font-semibold leading-normal text-sm">New Clients</p>
-                                        <h5 class="mb-0 font-bold">
-                                            +3,462
-                                            <span class="leading-normal text-red-600 text-sm font-weight-bolder">-2%</span>
-                                        </h5>
+                                        <p class="mb-0 font-sans font-bold leading-normal text-bg">pengembalian booking</p>
+                                        <!-- <h5 class="mb-0 font-bold">
+                                            
+                                        
+                                        </h5> -->
                                     </div>
                                 </div>
                                 <div class="px-3 text-right basis-1/3">
-                                    <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                                <div class="flex justify-center items-center w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7]" >
+                                <h5 class="mb-0 font-bold">5</h5>
                                         <i class="ni leading-none ni-paper-diploma text-lg relative top-3.5 text-white"></i>
                                     </div>
                                 </div>
@@ -448,17 +443,18 @@
                     <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
                         <div class="flex-auto p-4">
                             <div class="flex flex-row -mx-3">
-                                <div class="flex-none w-2/3 max-w-full px-3">
+                                <div class="flex justify-start items-center w-2/3 max-w-full px-3">
                                     <div>
-                                        <p class="mb-0 font-sans font-semibold leading-normal text-sm">Sales</p>
-                                        <h5 class="mb-0 font-bold">
-                                            $103,430
+                                        <p class="mb-0 font-sans font-bold leading-normal text-lg">penilaian perlu dibalas</p>
+                                        <!-- <h5 class="mb-0 font-bold">
+    
                                             <span class="leading-normal text-sm font-weight-bolder text-lime-500">+5%</span>
-                                        </h5>
+                                        </h5> -->
                                     </div>
                                 </div>
                                 <div class="px-3 text-right basis-1/3">
-                                    <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
+                                <div class="flex justify-center items-center w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7]" >
+                                <h5 class="mb-0 font-bold">5</h5>
                                         <i class="ni leading-none ni-cart text-lg relative top-3.5 text-white"></i>
                                     </div>
                                 </div>
@@ -476,34 +472,87 @@
                             <div class="flex flex-wrap -mx-3">
                                 <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
                                     <div class="flex flex-col h-full">
-                                        <p class="pt-2 mb-1 font-semibold">Built by developers</p>
-                                        <h5 class="font-bold">Soft UI Dashboard</h5>
-                                        <p class="mb-12">From colors, cards, typography to complex elements, you will find the full documentation.</p>
+                                        <p class="pt-2 mb-1 font-bold">performa  restourant</p>
+                                        <!-- tempat menu -->
+                                        
+                                         <!-- menu -->
+                                        <div class="grid grid-cols-3 gap-6 ">
+                                            <div class="flex flex-col items-center">
+                                                <div class="bg-red-500 p-4 rounded-full">
+                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                                     </svg>
+                                                </div>
+                                                    <span class="mt-2 text-center text-gray-700">menu</span>
+                                                </div>
+                                                <!-- keuangan -->
+                                                <div class="flex flex-col items-center">
+                                                    <div class="bg-yellow-500 p-4 rounded-full">
+                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                                    </svg>
+                                                </div>
+                                                    <span class="mt-2 text-center text-gray-700">Keuangan</span>
+                                                </div>
+                                                <!-- performa resaurant -->
+                                                <div class="flex flex-col items-center">
+                                                    <div class="bg-orange-500 p-4 rounded-full">
+                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                                    </svg>
+                                                </div>
+                                                    <span class="mt-2 text-center text-gray-700">performa restaurant</span>
+                                                </div>
+                                                <!-- promosi restaurant -->
+                                                <div class="flex flex-col items-center">
+                                                    <div class="bg-blue-500 p-4 rounded-full">
+                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                                    </svg>
+                                                </div>
+                                                    <span class="mt-2 text-center text-gray-700">promosi restaurant</span>
+                                                </div>
+                                                <!-- program restaurant -->
+                                                <div class="flex flex-col items-center">
+                                                    <div class="bg-yellow-500 p-4 rounded-full">
+                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                                    </svg>
+                                                </div>
+                                                    <span class="mt-2 text-center text-gray-700">program restaurant</span>
+                                                </div>
+                                                <!-- pusat bantuan  -->
+                                                <div class="flex flex-col items-center">
+                                                    <div class="bg-teal-500 p-4 rounded-full">
+                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                                    </svg>
+                                                </div>
+                                                    <span class="mt-2 text-center text-gray-700">pusat bantuan</span>
+                                                </div>                           
+                                    </div>
+                                        <!-- tempat menu sampe sini -->
+
                                         <a class="mt-auto mb-0 font-semibold leading-normal text-sm group text-slate-500" href="javascript:;">
-                                            Read More
+                                            lainnya
                                             <i class="fas fa-arrow-right ease-bounce text-sm group-hover:translate-x-1.25 ml-1 leading-normal transition-all duration-200"></i>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none">
-                                    <div class="h-full bg-gradient-to-tl from-purple-700 to-pink-500 rounded-xl">
-                                        <img src="../assets/img/shapes/waves-white.svg" class="absolute top-0 hidden w-1/2 h-full lg:block" alt="waves" />
-                                        <div class="relative flex items-center justify-center h-full">
-                                            <img class="relative z-20 w-full pt-6" src="../assets/img/illustrations/rocket-white.png" alt="rocket" />
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="w-full max-w-full px-3 lg:w-5/12 lg:flex-none">
                     <div class="border-black/12.5 shadow-soft-xl relative flex h-full min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border p-4">
                         <div class="relative h-full overflow-hidden bg-cover rounded-xl" style="background-image: url('../assets/img/ivancik.jpg')">
                             <span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80"></span>
                             <div class="relative z-10 flex flex-col flex-auto h-full p-4">
-                                <h5 class="pt-2 mb-6 font-bold text-white">Work with the rockets</h5>
-                                <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>
+                                <h5 class="pt-2 mb-6 font-bold text-white">berita</h5>
+                                <!-- <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p> -->
                                 <a class="mt-auto mb-0 font-semibold leading-normal text-white group text-sm" href="javascript:;">
                                     Read More
                                     <i class="fas fa-arrow-right ease-bounce text-sm group-hover:translate-x-1.25 ml-1 leading-normal transition-all duration-200"></i>
@@ -636,11 +685,7 @@
                 <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
                     <div class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                         <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
-                            <h6>Sales overview</h6>
-                            <p class="leading-normal text-sm">
-                                <i class="fa fa-arrow-up text-lime-500"></i>
-                                <span class="font-semibold">4% more</span> in 2021
-                            </p>
+                            <h6>ulasan customer</h6>
                         </div>
                         <div class="flex-auto p-4">
                             <div>
@@ -661,11 +706,11 @@
                         <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
                             <div class="flex flex-wrap mt-0 -mx-3">
                                 <div class="flex-none w-7/12 max-w-full px-3 mt-0 lg:w-1/2 lg:flex-none">
-                                    <h6>Projects</h6>
+                                    <h6>booking progres bar</h6>
                                     <p class="mb-0 leading-normal text-sm">
                                         <i class="fa fa-check text-cyan-500"></i>
-                                        <span class="ml-1 font-semibold">30 done</span>
-                                        this month
+                                        <span class="ml-1 font-semibold">24 </span>
+                                        bulan ini
                                     </p>
                                 </div>
                                 <div class="flex-none w-5/12 max-w-full px-3 my-auto text-right lg:w-1/2 lg:flex-none">
@@ -695,9 +740,11 @@
                                 <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                                     <thead class="align-bottom">
                                         <tr>
-                                            <th class="px-6 py-3 font-bold tracking-normal text-left uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">Companies</th>
-                                            <th class="px-6 py-3 pl-2 font-bold tracking-normal text-left uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">Members</th>
-                                            <th class="px-6 py-3 font-bold tracking-normal text-center uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">Budget</th>
+                                            
+                                            <th class="px-6 py-3 font-bold tracking-normal text-center uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">Nama Customer</th>
+                                            <th class="px-6 py-3 font-bold tracking-normal text-center uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">nomor meja</th>
+                                            <th class="px-6 py-3 pl-2 font-bold tracking-normal text-center uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">status pembbayaran</th>
+                                            <th class="px-6 py-3 font-bold tracking-normal text-center uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">harga</th>
                                             <th class="px-6 py-3 font-bold tracking-normal text-center uppercase align-middle bg-transparent border-b letter border-b-solid text-xxs whitespace-nowrap border-b-gray-200 text-slate-400 opacity-70">Completion</th>
                                         </tr>
                                     </thead>
@@ -706,44 +753,20 @@
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                                                 <div class="flex px-2 py-1">
                                                     <div>
-                                                        <img src="../assets/img/small-logos/logo-xd.svg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="xd" />
+                                                        <!-- <img src="../assets/img/small-logos/logo-xd.svg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="xd" /> -->
                                                     </div>
-                                                    <div class="flex flex-col justify-center">
-                                                        <h6 class="mb-0 leading-normal text-sm">Soft UI XD Version</h6>
+                                                    <div class="flex flex-col justify-center w-full items-center">
+                                                        <h6 class="mb-0 leading-normal text-sm">aldi</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                                <div class="mt-2 avatar-group">
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-1.jpg" class="w-full rounded-full" alt="team1" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Ryan Tompson
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-2.jpg" class="w-full rounded-full" alt="team2" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Romina Hadid
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-3.jpg" class="w-full rounded-full" alt="team3" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Alexander Smith
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-4.jpg" class="w-full rounded-full" alt="team4" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Jessica Doe
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
+                                            <div class="flex flex-col justify-center w-full items-center">
+                                                    <h5>5</h5>
                                                 </div>
+                                            </td>
+                                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
+                                                <span class="font-semibold leading-tight text-xs"> terbayar </span>
                                             </td>
                                             <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
                                                 <span class="font-semibold leading-tight text-xs"> $14,000 </span>
@@ -764,31 +787,18 @@
                                         <tr>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                                                 <div class="flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-atlassian.svg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="atlassian" />
-                                                    </div>
-                                                    <div class="flex flex-col justify-center">
-                                                        <h6 class="mb-0 leading-normal text-sm">Add Progress Track</h6>
+                                                    <div class="flex flex-col justify-center w-full items-center">
+                                                        <h6 class="mb-0 leading-normal text-sm">Dzaki</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                                <div class="mt-2 avatar-group">
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-2.jpg" class="w-full rounded-full" alt="team5" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Romina Hadid
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-4.jpg" class="w-full rounded-full" alt="team6" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Jessica Doe
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
+                                            <div class="flex flex-col justify-center w-full items-center">
+                                                    <h5>4</h5>
                                                 </div>
+                                            </td>
+                                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
+                                                <span class="font-semibold leading-tight text-xs"> terbayar </span>
                                             </td>
                                             <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
                                                 <span class="font-semibold leading-tight text-xs"> $3,000 </span>
@@ -809,34 +819,21 @@
                                         <tr>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                                                 <div class="flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-slack.svg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="team7" />
-                                                    </div>
-                                                    <div class="flex flex-col justify-center">
-                                                        <h6 class="mb-0 leading-normal text-sm">Fix Platform Errors</h6>
+                                                    <div class="flex flex-col justify-center w-full items-center">
+                                                        <h6 class="mb-0 leading-normal text-sm">Ajim</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                                <div class="mt-2 avatar-group">
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-3.jpg" class="w-full rounded-full" alt="team8" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Romina Hadid
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-1.jpg" class="w-full rounded-full" alt="team9" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Jessica Doe
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                </div>
+                                               <div class="flex flex-col justify-center w-full items-center">
+                                                    <h5>1</h5>
+                                               </div>
                                             </td>
                                             <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
-                                                <span class="font-semibold leading-tight text-xs"> Not set </span>
+                                                <span class="font-semibold leading-tight text-xs"> terbayar </span>
+                                            </td>
+                                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
+                                                <span class="font-semibold leading-tight text-xs"> $3,000 </span>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                                                 <div class="w-3/4 mx-auto">
@@ -854,45 +851,18 @@
                                         <tr>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                                                 <div class="flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="spotify" />
-                                                    </div>
-                                                    <div class="flex flex-col justify-center">
-                                                        <h6 class="mb-0 leading-normal text-sm">Launch our Mobile App</h6>
+                                                    <div class="flex flex-col justify-center w-full items-center">
+                                                        <h6 class="mb-0 leading-normal text-sm">Ario</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                                <div class="mt-2 avatar-group">
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-4.jpg" class="w-full rounded-full" alt="user1" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Ryan Tompson
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-3.jpg" class="w-full rounded-full" alt="user2" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Romina Hadid
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-4.jpg" class="w-full rounded-full" alt="user3" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Alexander Smith
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-1.jpg" class="w-full rounded-full" alt="user4" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Jessica Doe
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
+                                                <div class="flex flex-col justify-center w-full items-center">
+                                                    <h5>3</h5>
                                                 </div>
+                                            </td>
+                                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
+                                                <span class="font-semibold leading-tight text-xs"> terbayar </span>
                                             </td>
                                             <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
                                                 <span class="font-semibold leading-tight text-xs"> $20,500 </span>
@@ -913,24 +883,18 @@
                                         <tr>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
                                                 <div class="flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-jira.svg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="jira" />
-                                                    </div>
-                                                    <div class="flex flex-col justify-center">
-                                                        <h6 class="mb-0 leading-normal text-sm">Add the New Pricing Page</h6>
+                                                    <div class="flex flex-col justify-center w-full items-center">
+                                                        <h6 class="mb-0 leading-normal text-sm">Aryan</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                                <div class="mt-2 avatar-group">
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-4.jpg" class="w-full rounded-full" alt="user5" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Ryan Tompson
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
+                                            <div class="flex flex-col justify-center w-full items-center">
+                                                    <h5>9</h5>
                                                 </div>
+                                            </td>
+                                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
+                                                <span class="font-semibold leading-tight text-xs"> terbayar </span>
                                             </td>
                                             <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
                                                 <span class="font-semibold leading-tight text-xs"> $500 </span>
@@ -951,31 +915,18 @@
                                         <tr>
                                             <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
                                                 <div class="flex px-2 py-1">
-                                                    <div>
-                                                        <img src="../assets/img/small-logos/logo-invision.svg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="invision" />
-                                                    </div>
-                                                    <div class="flex flex-col justify-center">
-                                                        <h6 class="mb-0 leading-normal text-sm">Redesign New Online Shop</h6>
+                                                    <div class="flex flex-col justify-center w-full items-center">
+                                                        <h6 class="mb-0 leading-normal text-sm">zidan</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
-                                                <div class="mt-2 avatar-group">
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-1.jpg" class="w-full rounded-full" alt="user6" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Ryan Tompson
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
-                                                    <a href="javascript:;" class="relative z-20 inline-flex items-center justify-center w-6 h-6 -ml-4 text-white transition-all duration-200 border-2 border-white border-solid rounded-full ease-soft-in-out text-xs hover:z-30" data-target="tooltip_trigger" data-placement="bottom">
-                                                        <img src="../assets/img/team-4.jpg" class="w-full rounded-full" alt="user7" />
-                                                    </a>
-                                                    <div data-target="tooltip" class="hidden px-2 py-1 text-white bg-black rounded-lg text-sm" role="tooltip">
-                                                        Jessica Doe
-                                                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                                                    </div>
+                                            <div class="flex flex-col justify-center w-full items-center">
+                                                    <h5>2</h5>
                                                 </div>
+                                            </td>
+                                            <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap">
+                                                <span class="font-semibold leading-tight text-xs "> terbayar </span>
                                             </td>
                                             <td class="p-2 leading-normal text-center align-middle bg-transparent border-0 text-sm whitespace-nowrap">
                                                 <span class="font-semibold leading-tight text-xs"> $2,000 </span>
@@ -1008,7 +959,7 @@
                             <h6>Orders overview</h6>
                             <p class="leading-normal text-sm">
                                 <i class="fa fa-arrow-up text-lime-500"></i>
-                                <span class="font-semibold">24%</span> this month
+                                <span class="font-semibold">24%</span> orders bulan ini
                             </p>
                         </div>
                         <div class="flex-auto p-4">
@@ -1018,7 +969,8 @@
                                         <i class="relative z-10 text-transparent ni leading-none ni-bell-55 leading-pro bg-gradient-to-tl from-green-600 to-lime-400 bg-clip-text fill-transparent"></i>
                                     </span>
                                     <div class="ml-11.252 pt-1.4 lg:max-w-120 relative -top-1.5 w-auto">
-                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">$2400, Design changes</h6>
+                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">aldi keluarga</h6>
+                                        <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">meja 5</p>
                                         <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">22 DEC 7:20 PM</p>
                                     </div>
                                 </div>
@@ -1027,7 +979,8 @@
                                         <i class="relative z-10 text-transparent ni leading-none ni-html5 leading-pro bg-gradient-to-tl from-red-600 to-rose-400 bg-clip-text fill-transparent"></i>
                                     </span>
                                     <div class="ml-11.252 pt-1.4 lg:max-w-120 relative -top-1.5 w-auto">
-                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">New order #1832412</h6>
+                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">ario dan ayang kesayangan</h6>
+                                        <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">meja 6</p>
                                         <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">21 DEC 11 PM</p>
                                     </div>
                                 </div>
@@ -1036,7 +989,8 @@
                                         <i class="relative z-10 text-transparent ni leading-none ni-cart leading-pro bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text fill-transparent"></i>
                                     </span>
                                     <div class="ml-11.252 pt-1.4 lg:max-w-120 relative -top-1.5 w-auto">
-                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">Server payments for April</h6>
+                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">ajim dan selingkuhan</h6>
+                                        <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">private table 1</p>
                                         <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">21 DEC 9:34 PM</p>
                                     </div>
                                 </div>
@@ -1045,7 +999,8 @@
                                         <i class="relative z-10 text-transparent ni leading-none ni-credit-card leading-pro bg-gradient-to-tl from-red-500 to-yellow-400 bg-clip-text fill-transparent"></i>
                                     </span>
                                     <div class="ml-11.252 pt-1.4 lg:max-w-120 relative -top-1.5 w-auto">
-                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">New card added for order #4395133</h6>
+                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">aldi dan ayang  kesayangan</h6>
+                                        <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">meja 9</p>
                                         <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">20 DEC 2:20 AM</p>
                                     </div>
                                 </div>
@@ -1054,7 +1009,8 @@
                                         <i class="relative z-10 text-transparent ni leading-none ni-key-25 leading-pro bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text fill-transparent"></i>
                                     </span>
                                     <div class="ml-11.252 pt-1.4 lg:max-w-120 relative -top-1.5 w-auto">
-                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">Unlock packages for development</h6>
+                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">aryan dan holil date</h6>
+                                        <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">meja 2</p>
                                         <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">18 DEC 4:54 AM</p>
                                     </div>
                                 </div>
@@ -1063,7 +1019,8 @@
                                         <i class="relative z-10 text-transparent ni leading-none ni-money-coins leading-pro bg-gradient-to-tl from-gray-900 to-slate-800 bg-clip-text fill-transparent"></i>
                                     </span>
                                     <div class="ml-11.252 pt-1.4 lg:max-w-120 relative -top-1.5 w-auto">
-                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">New order #9583120</h6>
+                                        <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">Dzaki</h6>
+                                        <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">meja 1</p>
                                         <p class="mt-1 mb-0 font-semibold leading-tight text-xs text-slate-400">17 DEC</p>
                                     </div>
                                 </div>
