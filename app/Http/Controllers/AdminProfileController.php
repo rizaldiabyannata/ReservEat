@@ -12,4 +12,10 @@ class AdminProfileController extends Controller
         $user = Auth::user();
         return view('admin.page.profile', compact('user'));
     }
+
+    public function editProfile()
+    {
+        $user = Auth::user();
+        return view('admin.page.editprofile', compact('user'));
+    }
 }

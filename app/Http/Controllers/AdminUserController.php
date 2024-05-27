@@ -44,4 +44,15 @@ class AdminUserController extends Controller
         $user->delete();
         return redirect('/admin/users')->with('success', 'User deleted successfully');
     }
+
+    public function addUser()
+    {
+        return view('admin.page.adduser');
+    }
+
+    public function editUser()
+    {
+        $users = User::all();
+        return view('admin.page.edituser', compact('users'));
+    }
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> -->
     @vite('resources/css/app.css')
-    <title>Users</title>
+    <title>Edit Users</title>
 </head>
 
 <!-- #8739f9 -->
@@ -16,7 +16,7 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / users' titlepage='Users'></x-admin-nav>
+        <x-admin-nav router='admin / edituser' titlepage='Edit Users'></x-admin-nav>
         <div class="px-4">
             <div class="grid grid-cols-2 gap-4 mb-4">
                 <div class="flex items-center justify-center h-24 rounded border bg-[#8739f9] border-gray-400">
@@ -74,6 +74,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Status
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -99,6 +102,16 @@
                                 <div class="flex items-center">
                                     <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
                                 </div>
+                            </td>
+                            <td class="px-6 py-4 flex flex-row space-x-2">
+                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="btn" type="button">
+                                    Edit
+                                </button>
+                                <form action="{{ url('/admin/users/'. $user->id) }}" method="GET">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

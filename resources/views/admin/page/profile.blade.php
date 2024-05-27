@@ -10,45 +10,33 @@
 
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
-    <div class="p-4 sm:ml-64">
+    <div class="ml-64">
+        <x-admin-nav router='admin / myprofile' titlepage='My Profile'></x-admin-nav>
         <div class="p-4">
-            <h2 class="text-3xl text-center py-10 font-extrabold">My Profile</h2>
-            <form action="/admin/myprofile" method="GET">
-                @csrf
-                <div class="mb-4">
-                    <label for="firstName" class="block font-bold mb-2">Name</label>
-                    <input type="text" id="name" name="name" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->name }}" required>
+            <h1 class="text-2xl font-bold mb-4 text-center">My Profile</h1>
+            <div class="flex flex-row justify-center items-center space-x-10">
+                <div class="w-32">
+                    <img class='rounded-lg' src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                 </div>
-                <div class="mb-4">
-                    <label for="phone" class="block font-bold mb-2">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->phone }}" required>
+                <div class="flex flex-row space-x-6">
+                    <div class="mb-4">
+                        <label class="block font-bold mb-2">Name</label>
+                        <p>{{ $user->name }}</p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block font-bold mb-2">Phone Number</label>
+                        <p>{{ $user->phone }}</p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block font-bold mb-2">Email</label>
+                        <p>{{ $user->email }}</p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block font-bold mb-2">Role</label>
+                        <p>{{ ucfirst($user->role) }}</p>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label for="email" class="block font-bold mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->email }}" required>
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="block font-bold mb-2">Password</label>
-                    <input type="password" id="password" name="password" class="border border-gray-400 p-2 w-full rounded-md" value="{{ $user->password }}" required>
-                </div>
-                <div class="mb-4">
-                    <label for="changePassword" class="block font-bold mb-2">Change Password</label>
-                    <input type="password" id="changePassword" name="changePassword" class="border border-gray-400 p-2 w-full rounded-md">
-                </div>
-                <div class="mb-4">
-                    <label for="confirmPassword" class="block font-bold mb-2">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" class="border border-gray-400 p-2 w-full rounded-md">
-                </div>
-                <div class="mb-4">
-                    <label for="role" class="block font-bold mb-2">Role</label>
-                    <select id="role" name="role" class="border border-gray-400 p-2 w-full rounded-md">
-                        <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="restaurant" {{ $user->role === 'restaurant' ? 'selected' : '' }}>User</option>
-                        <option value="user" {{ $user->role === 'user' ? 'selected' : '' }}>User</option>
-                    </select>
-                </div>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
-            </form>
+            </div>
         </div>
     </div>
 </body>

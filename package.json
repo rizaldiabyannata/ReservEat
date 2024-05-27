@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "chart.js": "^4.4.2",
+        "chartjs": "^0.3.24",
         "swiper": "^11.1.1"
     }
 }
