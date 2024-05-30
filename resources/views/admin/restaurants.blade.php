@@ -33,7 +33,7 @@
                     <div class="w-full flex flex-row justify-between px-10">
                         <div class="flex flex-col">
                             <p class="text-xs text-white">Jumlah Restaurant</p>
-                            <h4 class="text-2xl text-white">10</h4>
+                            <h4 class="text-2xl text-white">{{ @count($restaurantsWithRatings)}}</h4>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-12 h-12">
                             <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
@@ -66,12 +66,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($restaurants as $restaurant)
+                        @foreach ($restaurantsWithRatings as $restaurant)
                         <tr class="border-b bg-white text-black hover:bg-[#F2F5F5]">
-                            <td class="px-6 py-4">{{ $restaurant['name'] }}</td>
-                            <td class="px-6 py-4">{{ $restaurant['address'] }}</td>
-                            <td class="px-6 py-4">{{ $restaurant['phone'] }}</td>
-                            <td class="px-6 py-4">{{ $restaurant['rating'] }}</td>
+                            <td class="px-6 py-4">{{ $restaurant->name }}</td>
+                            <td class="px-6 py-4">{{ $restaurant->address }}</td>
+                            <td class="px-6 py-4">{{ $restaurant->phone_number }}</td>
+                            <td class="px-6 py-4">{{ $restaurant->average_rating = round($restaurant->average_rating, 1); }}</td>
                             <td class="px-6 py-4">{{ $restaurant['reservations_today'] }}</td>
                         </tr>
                         @endforeach

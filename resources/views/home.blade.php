@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservEat - Restaurant Selection</title>
+    <title>ReservEat - Testisng</title>
     @vite('resources/css/app.css')
     <style>
         .bg-peachy-brown {

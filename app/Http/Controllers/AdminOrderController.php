@@ -91,7 +91,7 @@ class AdminOrderController extends Controller
             ]
         ];
 
-        return view('admin.page.orders', compact('orders'));
+        return view('admin.orders', compact('orders'));
     }
     public function getOrders()
     {

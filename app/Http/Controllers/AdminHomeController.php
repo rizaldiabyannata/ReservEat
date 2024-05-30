@@ -10,6 +10,6 @@ class AdminHomeController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.page.home', compact('users'));
+        return view('admin.home', compact('users'));
     }
 }

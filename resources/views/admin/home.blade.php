@@ -223,7 +223,7 @@
 
                     var phoneCell = document.createElement('td');
                     phoneCell.classList.add('px-4', 'py-2');
-                    phoneCell.textContent = restaurant.phone;
+                    phoneCell.textContent = restaurant.phone_number;
 
                     row.appendChild(nameCell);
                     row.appendChild(phoneCell);

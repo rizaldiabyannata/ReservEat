@@ -13,7 +13,7 @@ class AdminUserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.page.users', compact('users'));
+        return view('admin.users', compact('users'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -47,12 +47,12 @@ class AdminUserController extends Controller
 
     public function addUser()
     {
-        return view('admin.page.adduser');
+        return view('admin.adduser');
     }
 
     public function editUser()
     {
         $users = User::all();
-        return view('admin.page.edituser', compact('users'));
+        return view('admin.edituser', compact('users'));
     }
 }
