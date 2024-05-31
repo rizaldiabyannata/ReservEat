@@ -19,9 +19,12 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/admin/dashboard', [AdminHomeController::class, 'index']);
 
 Route::get('/admin/users', [AdminUserController::class, 'index'])->middleware(ValidateRole::class);
-Route::get('/admin/adduser', [AdminUserController::class, 'addUser']);
+Route::get('/admin/adduser', [AdminUserController::class, 'addUser'])->name('admin.adduser');
+Route::post('/admin/adduser', [AdminUserController::class, 'store'])->name('admin.storeuser');
 Route::get('/admin/edituser', [AdminUserController::class, 'editUser']);
-Route::get('/admin/users/{id}', [AdminUserController::class, "destroy"])->middleware(ValidateRole::class);
+Route::get('/admin/edituser/form/{id}', [AdminUserController::class, 'formedit'])->name('admin.formedit');
+Route::patch('/admin/edituser/form/{id}', [AdminUserController::class, 'update'])->name('admin.updateuser');
+Route::delete('/admin/user/delete/{id}', [AdminUserController::class, "destroy"])->middleware(ValidateRole::class);
 
 Route::get('/admin/categorys', [AdminCategoryController::class, 'index']);
 Route::get('/admin/addcategory', [AdminCategoryController::class, 'addCategory']);

@@ -104,10 +104,11 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 flex flex-row space-x-2">
-                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="btn" type="button">
-                                    Edit
-                                </button>
-                                <form action="{{ url('/admin/users/'. $user->id) }}" method="GET">
+                                <a href="{{ url('/admin/edituser/form/'. $user->id) }}">
+                                    @csrf
+                                    <button type="submit" class="btn">Edit</button>
+                                </a>
+                                <form action="{{ url('/admin/user/delete/'. $user->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn">Hapus</button>
