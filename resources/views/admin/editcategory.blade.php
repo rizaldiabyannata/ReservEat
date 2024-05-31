@@ -25,12 +25,18 @@
                 <tbody>
                     @foreach ($categories as $category)
                     <tr class="border-b bg-white hover:bg-[#F2F5F5]">
-                        <td class="px-2 py-2 w-44"><img src="{{ URL::to('/assets/restaurantCategory/' . $category->path) }}" alt="image of . $category->category_name" srcset=""></td>
-                        <td class="px-6 py-4">{{ $category->category_name }}</td>
+                        <td class="px-2 py-2 w-44"><img class="rounded-lg" src="{{ URL::to('/assets/restaurantCategory/' . $category->path) }}" alt="image of . $category->category_name" srcset=""></td>
+                        <td class="px-6 py-4 font-bold">{{ $category->category_name }}</td>
                         <td class="px-6 py-4">{{ $category->description }}</td>
-                        <td class="px-6 py-4 flex space-x-6">
-                            <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <td class="px-6 py-10 flex space-x-6">
+                            <a href="{{ url('/admin/editcategory/form/'. $category->id) }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center">
+                                <h1>Edit</h1>
+                            </a>
+                            <form action="{{ url('/admin/category/delete/'. $category->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

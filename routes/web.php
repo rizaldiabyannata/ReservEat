@@ -28,8 +28,12 @@ Route::delete('/admin/user/delete/{id}', [AdminUserController::class, "destroy"]
 
 Route::get('/admin/categorys', [AdminCategoryController::class, 'index']);
 Route::get('/admin/addcategory', [AdminCategoryController::class, 'addCategory']);
+Route::post('/admin/addcategory', [AdminCategoryController::class, 'create']);
 Route::get('/admin/editcategory', [AdminCategoryController::class, 'editCategory']);
-Route::get('/admin/categorys/japanese', [AdminCategoryController::class, 'tableList']);
+Route::get('/admin/editcategory/form/{id}', [AdminCategoryController::class, 'formedit']);
+Route::patch('/admin/editcategory/form/{id}', [AdminCategoryController::class, 'update']);
+Route::delete('/admin/category/delete/{id}', [AdminCategoryController::class, 'destroy']);
+// Route::get('/admin/categorys/japanese', [AdminCategoryController::class, 'tableList']);
 
 Route::get('/admin/restaurants', [AdminRestaurantController::class, 'index']);
 Route::get('/admin/addrestaurant', [AdminRestaurantController::class, 'addRestaurant']);

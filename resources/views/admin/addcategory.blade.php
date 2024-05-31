@@ -18,11 +18,12 @@
         <x-admin-nav router='admin / addcategory' titlepage='Add Category'></x-admin-nav>
         <div class="p-4">
             <!-- form add category -->
-            <form method="POST" action="" enctype="multipart/form-data">
+            <form method="POST" action="/admin/addcategory" enctype="multipart/form-data">
+                @csrf
                 <div class="flex justify-center">
                     <div class="w-full md:w-1/2 xl:w-1/2 px-3 mb-6">
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Nama Kategori</label>
-                        <input type="text" id="name" class="block w-full p-2 pl-10 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="name" required>
+                        <label for="category_name" class="block mb-2 text-sm font-medium text-gray-700">Nama Kategori</label>
+                        <input type="text" id="name" class="block w-full p-2 pl-10 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="category_name" required>
                     </div>
                 </div>
 
@@ -35,8 +36,8 @@
 
                 <div class="flex justify-center">
                     <div class="w-full md:w-1/2 xl:w-1/2 px-3 mb-6">
-                        <label for="image" class="block mb-2 text-sm font-medium text-gray-700">Foto</label>
-                        <input type="file" id="image" class="block w-full p-2 pl-10 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="image" required>
+                        <label for="path" class="block mb-2 text-sm font-medium text-gray-700">Foto</label>
+                        <input type="file" id="image" class="block w-full p-2 pl-10 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="path" required>
                     </div>
                 </div>
 
