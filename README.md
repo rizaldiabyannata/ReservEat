@@ -1,7 +1,6 @@
 <h2 align="center"><u>ReservEat Web App</u></h2>
 
-![All About Work](https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif)
-
+![All About Work](https://user-images.githubusercontent.com/74038190/212749171-b84692a8-2b04-4e3b-93ca-ac14705da224.gif)
 <h4 align="center"> All About Work </h4>
 
 <p align="center">
@@ -13,23 +12,20 @@
 </p>
 
 ### [+] Description
-
 Tujuan dari web ini adalah untuk memudahkan dalam mencari, dan memesan tempat dan makanan di suatu restoran sehingga pelanggan dapat menikmati pelayanan lebih cepat. dengan target user adalah orang-orang yang sibuk sehingga tidak memiliki waktu banyak untuk memesan dan menunggu, ataupun untuk orang yang ingin membuat acara grup di sebuah restorant
 
 ### [+] Installation
-
--   `git clone https://github.com/rizaldiabyannata/ReservEat.git`
--   `cd ReservEat`
--   `composer install`
--   `npm install`
+ - `git clone https://github.com/rizaldiabyannata/ReservEat.git`
+ - `cd ReservEat`
+ - `composer install`
+ - `npm install`
 
 ### [+] Usage
-
--   `npm run dev (To Run Tailwind CSS)`
--   `php artisan serve`
+ - `npm run dev (To Run Tailwind CSS)`
+ - `php artisan serve`
 
 ### [+] Features
+ - Admin Dashboard
+ - Restaurant Dashboard
+ - Easy Reservation
 
--   Admin Dashboard
--   Restaurant Dashboard
--   Easy Reservation

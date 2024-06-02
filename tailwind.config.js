@@ -16,5 +16,8 @@ export default {
             },
         },
     },
-    plugins: [],
+    daisyui: {
+        themes: ["bumblebee"],
+    },
+    plugins: [require("daisyui")],
 };
