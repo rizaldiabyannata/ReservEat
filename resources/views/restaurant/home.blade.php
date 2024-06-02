@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
     <title>Soft UI Dashboard Tailwind</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -71,7 +72,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Tables</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Menu</span>
                     </a>
                 </li>
 
@@ -92,7 +93,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Billing</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">pembayaran</span>
                     </a>
                 </li>
 
@@ -114,7 +115,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Virtual Reality</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">ulasan customer</span>
                     </a>
                 </li>
 
@@ -136,7 +137,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">RTL</span>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Pengaturan</span>
                     </a>
                 </li>
 
@@ -470,13 +471,13 @@
                     <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
                         <div class="flex-auto p-4">
                             <div class="flex flex-wrap -mx-3">
-                                <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
-                                    <div class="flex flex-col h-full">
+                                <div class="w-full px-3">
+                                    <div class="flex flex-col h-full w-full">
                                         <p class="pt-2 mb-1 font-bold">performa  restourant</p>
                                         <!-- tempat menu -->
                                         
                                          <!-- menu -->
-                                        <div class="grid grid-cols-3 gap-6 ">
+                                        <div class="w-full grid grid-cols-3 gap-6 ">
                                             <div class="flex flex-col items-center">
                                                 <div class="bg-red-500 p-4 rounded-full">
                                                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -539,8 +540,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none">
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -580,7 +580,7 @@
                                 <div class="flex flex-wrap mt-0 -mx-3">
                                     <div class="flex-none w-1/4 max-w-full py-4 pl-0 pr-3 mt-0">
                                         <div class="flex mb-2">
-                                            <div class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-purple-700 to-pink-500 text-neutral-900">
+                                            <div class="flex items-center justify-center w-5 h-5 mr-2 text-center bg-center rounded fill-current shadow-soft-2xl bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7] text-neutral-900">
                                                 <svg width="10px" height="10px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                     <title>document</title>
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -1006,7 +1006,7 @@
                                 </div>
                                 <div class="relative mb-4 after:clear-both after:table after:content-['']">
                                     <span class="w-6.5 h-6.5 text-base absolute left-4 z-10 inline-flex -translate-x-1/2 items-center justify-center rounded-full bg-white text-center font-semibold">
-                                        <i class="relative z-10 text-transparent ni leading-none ni-key-25 leading-pro bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text fill-transparent"></i>
+                                        <i class="relative z-10 text-transparent ni leading-none ni-key-25 leading-pro bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7] bg-clip-text fill-transparent"></i>
                                     </span>
                                     <div class="ml-11.252 pt-1.4 lg:max-w-120 relative -top-1.5 w-auto">
                                         <h6 class="mb-0 font-semibold leading-normal text-sm text-slate-700">aryan dan holil date</h6>
@@ -1092,7 +1092,7 @@
                 </div>
                 <a href="javascript:void(0)">
                     <div class="my-2 text-left" sidenav-colors>
-                        <span class="text-xs rounded-circle h-5.75 mr-1.25 w-5.75 ease-soft-in-out bg-gradient-to-tl from-purple-700 to-pink-500 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-slate-700 text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700" active-color data-color-from="purple-700" data-color-to="pink-500" onclick="sidebarColor(this)"></span>
+                        <span class="text-xs rounded-circle h-5.75 mr-1.25 w-5.75 ease-soft-in-out bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7] relative inline-block cursor-pointer whitespace-nowrap border border-solid border-slate-700 text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700" active-color data-color-from="purple-700" data-color-to="pink-500" onclick="sidebarColor(this)"></span>
                         <span class="text-xs rounded-circle h-5.75 mr-1.25 w-5.75 ease-soft-in-out bg-gradient-to-tl from-gray-900 to-slate-800 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-white text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700" data-color-from="gray-900" data-color-to="slate-800" onclick="sidebarColor(this)"></span>
                         <span class="text-xs rounded-circle h-5.75 mr-1.25 w-5.75 ease-soft-in-out bg-gradient-to-tl from-blue-600 to-cyan-400 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-white text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700" data-color-from="blue-600" data-color-to="cyan-400" onclick="sidebarColor(this)"></span>
                         <span class="text-xs rounded-circle h-5.75 mr-1.25 w-5.75 ease-soft-in-out bg-gradient-to-tl from-green-600 to-lime-400 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-white text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700" data-color-from="green-600" data-color-to="lime-400" onclick="sidebarColor(this)"></span>
@@ -1106,7 +1106,7 @@
                     <p class="leading-normal text-sm">Choose between 2 different sidenav types.</p>
                 </div>
                 <div class="flex">
-                    <button transparent-style-btn class="inline-block w-full px-4 py-3 mb-2 font-bold text-center text-white uppercase align-middle transition-all border border-transparent border-solid rounded-lg cursor-pointer xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-purple-700 xl-max:to-pink-500 xl-max:text-white xl-max:border-0 hover:scale-102 hover:shadow-soft-xs active:opacity-85 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-purple-700 to-pink-500 bg-fuchsia-500 hover:border-fuchsia-500" data-class="bg-transparent" active-style>Transparent</button>
+                    <button transparent-style-btn class="inline-block w-full px-4 py-3 mb-2 font-bold text-center text-white uppercase align-middle transition-all border border-transparent border-solid rounded-lg cursor-pointer xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-purple-700 xl-max:to-pink-500 xl-max:text-white xl-max:border-0 hover:scale-102 hover:shadow-soft-xs active:opacity-85 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-[#A4DCD0] to-[#91C4D7] bg-fuchsia-500 hover:border-fuchsia-500" data-class="bg-transparent" active-style>Transparent</button>
                     <button white-style-btn class="inline-block w-full px-4 py-3 mb-2 ml-2 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg cursor-pointer xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-purple-700 xl-max:to-pink-500 xl-max:text-white xl-max:border-0 hover:scale-102 hover:shadow-soft-xs active:opacity-85 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 border-fuchsia-500 bg-none text-fuchsia-500 hover:border-fuchsia-500" data-class="bg-white">White</button>
                 </div>
                 <p class="block mt-2 leading-normal text-sm xl:hidden">You can change the sidenav type just on desktop view.</p>

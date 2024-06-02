@@ -8,6 +8,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RestaurantHomeController;
 use App\Http\Controllers\RestaurantMenuController;
+use App\Http\Controllers\RestaurantPesananController;
+use App\Http\Controllers\RestaurantDaftarmenuController;
+use App\Http\Controllers\RestaurantProfilerestoController;
 use App\Http\Middleware\ValidateRole;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +31,9 @@ Route::get('/admin/myprofile', [AdminProfileController::class, 'index']);
 
 Route::get('/restaurantadmin/dashboard', [RestaurantHomeController::class, 'index']);
 Route::get('/restaurantadmin/addmenu', [RestaurantMenuController::class, 'addMenu']);
+Route::get('/restaurantadmin/pesanan', [RestaurantPesananController::class, 'Pesanan']);
+Route::get('/restaurantadmin/daftarmenu', [RestaurantDaftarmenuController::class, 'daftarmenu']);
+Route::get('/restaurantadmin/profileresto', [RestaurantProfilerestoController::class, 'profileresto']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'auth']);
