@@ -40,10 +40,15 @@ class AdminCategoryController extends Controller
             $data['path'] = $fileName;
         }
 
-        $category = Restaurant_categories::create($data);
-        return redirect('/admin/categorys')->with('success', 'Restaurant Category created successfully');
+        try {
+            $category = Restaurant_categories::create($data);
+            notify()->success('Berhasil Menambahkan Category ' . $category['category_name']);
+            return redirect('/admin/categorys')->with('success', 'Restaurant Category created successfully');
+        } catch (\Exception $e) {
+            notify()->warning('Gagal Menambahkan');
+            return redirect()->back()->withErrors(['error' => 'Failed to create category. ' . $e->getMessage()])->withInput();
+        }
     }
-
 
     public function editCategory()
     {
@@ -58,6 +63,7 @@ class AdminCategoryController extends Controller
         if ($category) {
             return view('admin.formeditcategory', compact('category'));
         } else {
+            notify()->warning('Tidak Menemukan ' . $category['category_name']);
             return redirect()->back()->with('error', 'Category not found');
         }
     }
@@ -83,8 +89,10 @@ class AdminCategoryController extends Controller
             }
 
             $category->update($data);
+            notify()->success('Berhasil Mengupdate Category ' . $category['category_name']);
             return redirect('admin/categorys')->with('success', 'Category updated successfully');
         } else {
+            notify()->warning('Menghapus Gagal Update');
             return redirect()->back()->with('error', 'Category not found');
         }
     }
@@ -98,8 +106,10 @@ class AdminCategoryController extends Controller
             if (file_exists($imagePath)) {
                 unlink($imagePath);
             }
-            return redirect()->back()->with('success', 'Category deleted successfully');
+            notify()->success('Berhasil Menghapus Category ' . $category['category_name']);
+            return redirect('admin/categorys')->with('success', 'Category deleted successfully');
         } else {
+            notify()->warning('Menghapus Gagal');
             return redirect()->back()->with('error', 'Category not found');
         }
     }

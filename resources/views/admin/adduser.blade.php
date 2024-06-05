@@ -47,21 +47,28 @@
                             <input type="password" id="password_confirmation" class="block w-full p-2 pl-4 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="password_confirmation" required>
                         </div>
                     </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full">
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-700">Phone</label>
+                        <input type="number" id="phone" class="block w-full p-2 pl-4 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="phone" required>
+                        @error('phone')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="flex flex-wrap -mx-3 my-6">
                         <div class="w-full md:w-1/2 xl:w-1/2 px-3">
-                            <label for="phone" class="block mb-2 text-sm font-medium text-gray-700">Phone</label>
-                            <input type="number" id="phone" class="block w-full p-2 pl-4 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="phone" required>
-                            @error('phone')
-                            <span class="invalid-feedback">{{ $message }}</span>
-                            @enderror
+                            <label for="gender" class="block mb-2 text-sm font-medium text-gray-700">Gender</label>
+                            <select id="gender" class="block w-full p-2 pl-4 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
                         </div>
-
                         <div class="w-full md:w-1/2 xl:w-1/2 px-3">
                             <label for="role" class="block mb-2 text-sm font-medium text-gray-700">Role</label>
                             <select id="role" class="block w-full p-2 pl-4 text-sm text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" name="role" required>
                                 <option value="">Select Role</option>
                                 <option value="admin">Admin</option>
+                                <option value="restaurant">Restaurant</option>
                                 <option value="customer">User</option>
                             </select>
                             @error('role')

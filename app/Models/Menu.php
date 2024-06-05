@@ -12,6 +12,7 @@ class Menu extends Model
         'path_photo_menu',
         'menu_category_id',
         'description',
+        'stok',
         'price',
     ];
 
@@ -19,6 +20,6 @@ class Menu extends Model
 
     public function menuCategory()
     {
-        return $this->belongsTo(Menu_Categories::class);
+        return $this->belongsTo(MenuCategories::class);
     }
 }

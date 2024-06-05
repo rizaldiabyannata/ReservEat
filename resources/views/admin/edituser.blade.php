@@ -5,13 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> -->
+    @notifyCss
     @vite('resources/css/app.css')
     <title>Edit Users</title>
 </head>
-
-<!-- #8739f9 -->
-<!-- #37B9F1 -->
-<!-- #F2F5F5 -->
 
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
@@ -100,7 +97,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 <div class="flex items-center">
-                                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
+                                    <div></div>{{$user->phone}}
                                 </div>
                             </td>
                             <td class="px-6 py-4 flex flex-row space-x-2">
@@ -121,6 +118,8 @@
             </div>
         </div>
     </div>
+    @include('notify::components.notify')
+    @notifyJs
 </body>
 
 </html>

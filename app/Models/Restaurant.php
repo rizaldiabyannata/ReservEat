@@ -23,6 +23,7 @@ class Restaurant extends Model
         'password',
         'category_id',
         'number_of_tables',
+        'user_id'
     ];
 
     protected $casts = [
@@ -33,6 +34,11 @@ class Restaurant extends Model
     public function category()
     {
         return $this->belongsTo(restaurant_categories::class, 'category_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id');
     }
 
     public function getOpenTimeAttribute($value)

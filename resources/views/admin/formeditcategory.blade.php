@@ -17,7 +17,7 @@
                 <div class="w-full pb-10">
                     <div class="bg-white p-4 rounded-lg shadow-md flex flex-row space-x-4 items-center">
                         <img src="{{ URL::to('/assets/restaurantCategory/' . $category->path) }}" class="w-2/4 h-2/4 rounded-lg" alt="">
-                        <form method="POST" action="{{'/admin/editcategory/form/' . $category->id}}">
+                        <form method="POST" action="{{'/admin/editcategory/form/' . $category->id}}" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <div class="flex flex-wrap mb-6">

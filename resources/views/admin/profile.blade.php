@@ -15,9 +15,6 @@
         <div class="p-4">
             <h1 class="text-2xl font-bold mb-4 text-center">My Profile</h1>
             <div class="flex flex-row justify-center items-center space-x-10">
-                <div class="w-32">
-                    <img class='rounded-lg' src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                </div>
                 <div class="flex flex-row space-x-6">
                     <div class="mb-4">
                         <label class="block font-bold mb-2">Name</label>
@@ -36,6 +33,11 @@
                         <p>{{ ucfirst($user->role) }}</p>
                     </div>
                 </div>
+            </div>
+            <div>
+                <a href="{{'/admin/editprofile/' . $user->id}}" class="flex justify-end m-10">
+                    <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Profile</div>
+                </a>
             </div>
         </div>
     </div>

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
     <title>Add Restaurant</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    @notifyCss
+    @vite('resources/css/app.css')
 </head>
 
 <!-- #8739f9 primary-->
@@ -16,16 +16,27 @@
 <body>
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / home' titlepage='Dashboard'></x-admin-nav>
+        <x-admin-nav router='admin / addrestaurant' titlepage='Add Restaurant'></x-admin-nav>
         <div class="p-4">
             <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-2xl font-bold mb-6 text-[#8739f9]">Add Restaurant</h2>
-                <form>
+                <form action="/admin/addrestaurant" method="POST">
+                    @csrf
                     <div class="mb-4">
                         <label class="block text-gray-700 font-bold mb-2" for="photo">
                             Photo
                         </label>
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="photo" type="file">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2" for="user">
+                            User
+                        </label>
+                        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="category">
+                            <option value="">Select User</option>
+                            @foreach($userWithRoleRestaurant as $user)
+                            <option value="{{$user->id}}">{{$user->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 font-bold mb-2" for="address">
@@ -54,28 +65,15 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label class="block text-gray-700 font-bold mb-2" for="email">
-                            Email
-                        </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Enter email">
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-bold mb-2" for="password">
-                                Password
-                            </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter password">
-                        </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 font-bold mb-2" for="category">
                                 Category
                             </label>
                             <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="category">
                                 <option value="">Select category</option>
-                                <option value="italian">Italian</option>
-                                <option value="chinese">Chinese</option>
-                                <option value="japanese">Japanese</option>
-                                <option value="mexican">Mexican</option>
-                                <option value="korean">Korean</option>
-                                <option value="western">Western</option>
+                                @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="mb-4">
@@ -93,6 +91,8 @@
             </div>
         </div>
     </div>
+    @include('notify::components.notify')
+    @notifyJs
 </body>
 
 </html>

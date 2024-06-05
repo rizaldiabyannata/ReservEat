@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> -->
+    @notifyCss
     @vite('resources/css/app.css')
     <title>Users</title>
 </head>
@@ -59,12 +60,6 @@
                 <table class="w-full text-sm text-left rtl:text-right text-black">
                     <thead class="text-xs text-black uppercase">
                         <tr>
-                            <th scope="col" class="p-4">
-                                <div class="flex items-center">
-                                    <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                                </div>
-                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Name
                             </th>
@@ -74,17 +69,14 @@
                             <th scope="col" class="px-6 py-3">
                                 Status
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                                Gender
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($users as $user)
                         <tr class="border-b hover:bg-gray-50">
-                            <td class="w-4 p-4">
-                                <div class="flex items-center">
-                                    <input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                                </div>
-                            </td>
                             <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
                                 <div class="ps-3">
                                     <div class="text-base font-semibold">{{ $user->name  }}
@@ -92,12 +84,17 @@
                                     <div class="font-normal text-gray-500">{{ $user->email  }}</div>
                                 </div>
                             </th>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 capitalize">
                                 {{ $user->role  }}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="flex items-center">
-                                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
+                                    <div>{{$user->phone}}</div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <div class="capitalize">{{$user->gender}}</div>
                                 </div>
                             </td>
                         </tr>
@@ -107,6 +104,8 @@
             </div>
         </div>
     </div>
+    @include('notify::components.notify')
+    @notifyJs
 </body>
 
 </html>

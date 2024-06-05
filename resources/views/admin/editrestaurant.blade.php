@@ -38,19 +38,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($restaurants as $restaurant)
+                            @foreach ($restaurantsWithRatings as $restaurant)
                             <tr class="border-b bg-white text-black hover:bg-[#F2F5F5]">
                                 <td class="px-6 py-4">{{ $restaurant['name'] }}</td>
                                 <td class="px-6 py-4">{{ $restaurant['address'] }}</td>
                                 <td class="px-6 py-4">{{ $restaurant['phone'] }}</td>
                                 <td class="px-6 py-4">{{ $restaurant['rating'] }}</td>
-                                <td class="px-6 py-4">
-                                    <a href="" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#8739f9] hover:bg-[#7849d8]">
+                                <td class="px-6 py-4 flex flex-row space-x-2">
+                                    <a href="{{'/admin/editrestaurant/form/'. $restaurant->id}}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#8739f9] hover:bg-[#7849d8]">
                                         Edit
                                     </a>
-                                    <a href="" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-600">
-                                        Delete
-                                    </a>
+
+                                    <form action="{{ url('/admin/restaurant/delete/'. $restaurant->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-600">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

@@ -26,15 +26,20 @@ class AdminUserController extends Controller
                 'email' => 'required|email',
                 'password' => 'required|min:8',
                 'phone' => 'required',
-                'role' => 'required'
+                'role' => 'required',
             ]);
 
             $data['password'] = Hash::make($data['password']);
 
-            $user = User::create($data);
+            if ($request->has('gender') && $request->input('gender') !== '') {
+                $data['gender'] = $request->input('gender');
+            }
 
+            $user = User::create($data);
+            notify()->success('Menambahkan User ' . $data['name']);
             return redirect('/admin/users')->with('success', 'User created successfully');
         } catch (ValidationException $e) {
+            notify()->warning('Gagal User ');
             return redirect()->back()->withInput()->withErrors($e->validator);
         }
     }
@@ -51,6 +56,7 @@ class AdminUserController extends Controller
         Reviews::where('user_id', $id)->delete();
 
         $user->delete();
+        notify()->warning('Mendelete User');
         return redirect('/admin/users')->with('success', 'User deleted successfully');
     }
 
@@ -96,8 +102,12 @@ class AdminUserController extends Controller
                 $data['password'] = Hash::make($request->input('password'));
             }
 
-            $user->update($data);
+            if ($request->has('gender') && $request->input('gender') !== '') {
+                $data['gender'] = $request->input('gender');
+            }
 
+            $user->update($data);
+            notify()->success('Berhasil Update' . $data['name']);
             return redirect('/admin/users')->with('success', 'User updated successfully');
         } catch (ValidationException $e) {
             return redirect()->back()->withInput()->withErrors($e->validator);

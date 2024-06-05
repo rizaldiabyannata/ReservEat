@@ -1,0 +1,1 @@
+const typeit = require("typeit");

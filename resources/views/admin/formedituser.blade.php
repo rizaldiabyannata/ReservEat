@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @notifyCss
     @vite('resources/css/app.css')
     <title>Form Update User</title>
 </head>
@@ -37,8 +38,7 @@
                                 <select id="role" name="role" class="w-full p-2 text-sm text-gray-700" required>
                                     <option value="">Select Role</option>
                                     <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
-                                    <option value="moderator" {{ $user->role == 'moderator' ? 'selected' : '' }}>Moderator</option>
-                                    <option value="user" {{ $user->role == 'user' ? 'selected' : '' }}>User</option>
+                                    <option value="customer" {{ $user->role == 'customer' ? 'selected' : '' }}>Customer</option>
                                 </select>
                             </div>
                             <div class="flex flex-wrap mb-6">
@@ -54,6 +54,8 @@
             </div>
         </div>
     </div>
+    @include('notify::components.notify')
+    @notifyJs
 </body>
 
 </html>
