@@ -12,8 +12,9 @@ class Menu extends Model
         'path_photo_menu',
         'menu_category_id',
         'description',
-        'stok',
+        'stock',
         'price',
+        'restaurant_id'
     ];
 
     public $timestamps = true;
@@ -21,5 +22,10 @@ class Menu extends Model
     public function menuCategory()
     {
         return $this->belongsTo(MenuCategories::class);
+    }
+
+    public function restaurantId()
+    {
+        return $this->belongsTo(Restaurant::class);
     }
 }

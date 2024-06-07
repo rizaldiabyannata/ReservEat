@@ -70,8 +70,9 @@ Route::get('/api/getsessiondata', [AdminHomeController::class, 'getSessionData']
 
 Route::get('/restaurantadmin/dashboard', [RestaurantHomeController::class, 'index']);
 Route::get('/restaurantadmin/addmenu', [RestaurantMenuController::class, 'addMenu']);
+Route::post('/restaurantadmin/addmenu', [RestaurantMenuController::class, 'store']);
 Route::get('/restaurantadmin/pesanan', [RestaurantPesananController::class, 'Pesanan']);
-Route::get('/restaurantadmin/daftarmenu', [RestaurantDaftarmenuController::class, 'daftarmenu']);
+Route::get('/restaurantadmin/daftarmenu', [RestaurantMenuController::class, 'index']);
 Route::get('/restaurantadmin/profileresto', [RestaurantProfilerestoController::class, 'profileresto']);
 
 Route::get('/login', [LoginController::class, 'index']);
