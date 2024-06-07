@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-    
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +31,7 @@
 
         <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
             <ul class="flex flex-col pl-0 mb-0">
-                <li class="mt-0.5 w-full">
+            <li class="mt-0.5 w-full">
                 <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href='/restaurantadmin/dashboard'>
                         <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                             <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -78,16 +74,16 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors" href='/restaurantadmin/pesanan'>
-                        <div class="bg-gradient-to-tl  from-[#A4DCD0] to-[#91C4D7] shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href='/restaurantadmin/pesanan'>
+                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current stroke-0 text-center xl:p-2.5">
                             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>credit-card</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
                                         <g transform="translate(1716.000000, 291.000000)">
                                             <g transform="translate(453.000000, 454.000000)">
-                                                <path class="opacity-60" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
-                                                <path class="" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                                                <path class="fill-slate-800 opacity-60" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
+                                                <path class="fill-slate-800" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
                                             </g>
                                         </g>
                                     </g>
@@ -99,17 +95,17 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href='/restaurantadmin/reviewCustomer'>
-                        <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors" href='/restaurantadmin/reviewCustomer'>
+                        <div class="bg-gradient-to-tl  from-[#A4DCD0] to-[#91C4D7] shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>box-3d-50</title>
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g transform="translate(-2319.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
                                         <g transform="translate(1716.000000, 291.000000)">
                                             <g transform="translate(603.000000, 0.000000)">
-                                                <path class="fill-slate-800" d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"></path>
-                                                <path class="fill-slate-800 opacity-60" d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"></path>
-                                                <path class="fill-slate-800 opacity-60" d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"></path>
+                                                <path class="" d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"></path>
+                                                <path class=" opacity-60" d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"></path>
+                                                <path class=" opacity-60" d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"></path>
                                             </g>
                                         </g>
                                     </g>
@@ -247,9 +243,9 @@
                         <li class="leading-normal text-sm">
                             <a class="opacity-50 text-slate-700" href="javascript:;">Pages</a>
                         </li>
-                        <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']" aria-current="page">Pembayaran</li>
+                        <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']" aria-current="page">Ulasan Customer</li>
                     </ol>
-                    <h6 class="mb-0 font-bold capitalize">Pembayaran</h6>
+                    <h6 class="mb-0 font-bold capitalize">Ulasan Customer</h6>
                 </nav>
 
                 <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -369,367 +365,123 @@
 
         <!-- end Navbar -->
 
-      <div class="w-full px-6 py-6 mx-auto">
-        <!-- table 1 -->
+        <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-8">Review Restoran Ario wibu</h1>
 
-        <div class="flex flex-wrap -mx-3">
-          <div class="flex-none w-full max-w-full px-3">
-            <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
-              <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                <h6>CUSTOMER ORDER</h6>
-              </div>
-              <div class="flex-auto px-0 pt-0 pb-2">
-                <div class="p-0 overflow-x-auto">
-                  <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
-                    <thead class="align-bottom">
-                      <tr>
-                        <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> nama </th>
-                        <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> nomor invoice </th>
-                        <th class="px-6 py-3 pl-2 font-bold tex-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> nomor meja </th>
-                        <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> jumlah orang </th>
-                        <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> tanggal reservasi </th>
-                        <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> tagihan </th>
-                        <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> pembayaran via</th>
-                        <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> status pembayaran</th>
-                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Status</th>
-                        <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"></th>
-                        <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <div class="flex px-2 py-1">
-                            <div class="flex flex-col justify-center">
-                              <h6 class="mb-0 text-sm leading-normal">ario</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs leading-tight text-slate-400">ario12bbda773</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">8</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">2/11/2024</p>
-                            </div>
-                          </td>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">Rp.5.000.000</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">DANA</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">terbayar</p>
-                            </div>
-                          </td>
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">ready</span>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Delete</a>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex px-2 py-1">
-                              <div class="flex flex-col justify-center">
-                                <h6 class="mb-0 text-sm leading-normal">aldi</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                              <div class="flex flex-col justify-center w-full items-center">
-                                  <p class="mb-0 text-xs leading-tight text-slate-400">nhabdyvay1223</p>
-                              </div>
-                          </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">2</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10/11/2002</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">Rp.5.000.000</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">BANK BRI</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">menunggu pembayaran</p>
-                            </div>
-                          </td>
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <span class="bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">dibatalkan</span>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Delete</a>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex px-2 py-1">
-                              <div class="flex flex-col justify-center">
-                                <h6 class="mb-0 text-sm leading-normal">dzaki</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                              <div class="flex flex-col justify-center w-full items-center">
-                                  <p class="mb-0 text-xs leading-tight text-slate-400">najbduabubd87</p>
-                              </div>
-                          </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">2</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">2</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10/11/2023</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">Rp.5.000.000</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">GoPAY</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">terbayar</p>
-                            </div>
-                          </td>
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">ready</span>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Delete</a>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex px-2 py-1">
-                              <div class="flex flex-col justify-center">
-                                <h6 class="mb-0 text-sm leading-normal">jims</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                              <div class="flex flex-col justify-center w-full items-center">
-                                  <p class="mb-0 text-xs leading-tight text-slate-400">ario12bbda773</p>
-                              </div>
-                          </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10/11/2023</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">Rp.5.000.000</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">BANK BRI</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">terbayar</p>
-                            </div>
-                          </td>
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">ready</span>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Delete</a>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex px-2 py-1">
-                              <div class="flex flex-col justify-center">
-                                <h6 class="mb-0 text-sm leading-normal">ario gemoy</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                              <div class="flex flex-col justify-center w-full items-center">
-                                  <p class="mb-0 text-xs leading-tight text-slate-400">ario12bbda773</p>
-                              </div>
-                          </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10/11/2023</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">Rp.5.000.000</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">BANK BRI</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">menunggu pembayaran</p>
-                            </div>
-                          </td>
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <span class="bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">dibatalkan</span>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Delete</a>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                          <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex px-2 py-1">
-                              <div class="flex flex-col justify-center">
-                                <h6 class="mb-0 text-sm leading-normal">banan</h6>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                              <div class="flex flex-col justify-center w-full items-center">
-                                  <p class="mb-0 text-xs leading-tight text-slate-400">ario12bbda773</p>
-                              </div>
-                          </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">10/11/2023</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">Rp.5.000.000</p>
-                            </div>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">BANK BRI</p>
-                            </div>
-                        </td>
-                          <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <div class="flex flex-col justify-center w-full items-center">
-                                <p class="mb-0 text-xs font-semibold leading-tight">menunggu pembayaran</p>
-                            </div>
-                          </td>
-                        <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
-                          <span class="bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">dibatalkan</span>
-                        </td>
-                        <td class="p-2 text-center align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
-                          <a class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Delete</a>
-                        </td>
-                        <td class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
-                          <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+        <!-- Review Box -->
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <h2 class="text-xl font-bold mb-4">Review Terbaru</h2>
+            <!-- Single Review -->
+            <div class="flex mb-4">
+                <div class="w-1/6">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3jjCyfj9RJknvO87B6kPMRxrjJY6aa_1xMw&s" alt="foro" class="w-12 h-12 rounded-full">
                 </div>
-              </div>
+                <div class="w-5/6">
+                    <p class="font-bold">aldi</p>
+                    <p class="text-gray-600">restoran arion sangat mnnearik karna berisikan para wibu yang suka dengan tate no yiusa yang sanget gemot dan ada juga ri,muru disanaa walaupun makanannnya biasa aja .</p>
+                    <p class="text-xs text-gray-400">Posted 2 hours ago</p>
+                </div>
             </div>
-          </div>
-        </div>
-        
-  </body>
-  <!-- plugin for scrollbar  -->
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
-  <!-- github button -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- main script file  -->
-  <script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
-</html>
+            <!-- End Single Review -->
 
+            <!-- Form untuk Menambah Review -->
+            <form class="mt-4">
+                <h2 class="text-xl font-bold mb-4">Tambah Review Anda</h2>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
+                        balas review
+                    </label>
+                    <textarea
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="review" placeholder="Review Anda"></textarea>
+                </div>
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button">
+                    balasan
+                </button>
+            </form>
+            <!-- End Form untuk Menambah Review -->
+        </div>
+        <!-- End Review Box -->
+
+               <!-- Review Box -->
+               <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <h2 class="text-xl font-bold mb-4">Review Terbaru</h2>
+                <!-- Single Review -->
+                <div class="flex mb-4">
+                    <div class="w-1/6">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJS-3c62Ll3XWW8aOfIrjIQ_kg7G5kJgjTiQ&s" alt="foro" class="w-12 h-12 rounded-full">
+                    </div>
+                    <div class="w-5/6">
+                        <p class="font-bold">Ajim</p>
+                        <p class="text-gray-600">restoran arion sangat mnnearik karna berisikan para wibu yang suka dengan tate no yiusa yang sanget gemot dan ada juga ri,muru disanaa walaupun makanannnya biasa aja .</p>
+                        <p class="text-xs text-gray-400">Posted 2 hours ago</p>
+                    </div>
+                </div>
+                <!-- End Single Review -->
+    
+                <!-- Form untuk Menambah Review -->
+                <form class="mt-4">
+                    <h2 class="text-xl font-bold mb-4">Tambah Review Anda</h2>
+    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
+                            balas review
+                        </label>
+                        <textarea
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="review" placeholder="Review Anda"></textarea>
+                    </div>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="button">
+                        balasan
+                    </button>
+                </form>
+                <!-- End Form untuk Menambah Review -->
+            </div>
+            <!-- End Review Box -->
+
+                   <!-- Review Box -->
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <h2 class="text-xl font-bold mb-4">Review Terbaru</h2>
+            <!-- Single Review -->
+            <div class="flex mb-4">
+                <div class="w-1/6">
+                    <img src="data:image/jpeg;base64,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" alt="foro" class="w-12 h-12 rounded-full">
+                </div>
+                <div class="w-5/6">
+                    <p class="font-bold">Indra</p>
+                    <p class="text-gray-600">restoran arion sangat mnnearik karna berisikan para wibu yang suka dengan tate no yiusa yang sanget gemot dan ada juga ri,muru disanaa walaupun makanannnya biasa aja .</p>
+                    <p class="text-xs text-gray-400">Posted 2 hours ago</p>
+                </div>
+            </div>
+            <!-- End Single Review -->
+
+            <!-- Form untuk Menambah Review -->
+            <form class="mt-4">
+                <h2 class="text-xl font-bold mb-4">Tambah Review Anda</h2>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
+                        balas review
+                    </label>
+                    <textarea
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="review" placeholder="Review Anda"></textarea>
+                </div>
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button">
+                    balasan
+                </button>
+            </form>
+            <!-- End Form untuk Menambah Review -->
+        </div>
+        <!-- End Review Box -->
+    </div>
+</body>
+
+</html>
