@@ -14,32 +14,20 @@ class Restaurant extends Model
 
     protected $fillable = [
         'name',
-        'photo_path',
         'address',
         'phone_number',
         'open_time',
         'close_time',
-        'email',
-        'password',
-        'category_id',
         'number_of_tables',
-        'user_id'
+        'category_id',
+        'user_id',
+        'photo_path',
     ];
 
     protected $casts = [
         'open_time' => 'datetime:H:i:s',
         'close_time' => 'datetime:H:i:s',
     ];
-
-    public function category()
-    {
-        return $this->belongsTo(restaurant_categories::class, 'category_id');
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'id');
-    }
 
     public function getOpenTimeAttribute($value)
     {

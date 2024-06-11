@@ -21,23 +21,23 @@ class UserSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        $roles = ['admin', 'restaurant', 'customer'];
-        // user::create([
-        //     'name' => 'aldi',
-        //     'email' => 'aldizar255@gmail.com',
-        //     'password' => Hash::make('password'), // A common demo password
-        //     'role' => 'admin',
-        //     'phone' => '0852'
+        // $roles = ['admin', 'restaurant', 'customer'];
+        user::create([
+            'name' => 'aldi',
+            'email' => 'aldizar255@gmail.com',
+            'password' => Hash::make('password'), // A common demo password
+            'role' => 'admin',
+            'phone' => '0852'
 
-        // ]);
-        for ($i = 0; $i < 10; $i++) {
-            User::create([
-                'name' => $faker->name(),
-                'email' => $faker->unique()->safeEmail,
-                'password' => Hash::make('password'), // A common demo password
-                'role' => $roles[array_rand($roles)],
-                'phone' => $faker->randomNumber(5, true)
-            ]);
-        }
+        ]);
+        // for ($i = 0; $i < 10; $i++) {
+        //     User::create([
+        //         'name' => $faker->name(),
+        //         'email' => $faker->unique()->safeEmail,
+        //         'password' => Hash::make('password'), // A common demo password
+        //         'role' => $roles[array_rand($roles)],
+        //         'phone' => $faker->randomNumber(5, true)
+        //     ]);
+        // }
     }
 }

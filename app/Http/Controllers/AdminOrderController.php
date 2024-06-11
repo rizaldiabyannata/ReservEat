@@ -10,6 +10,7 @@ class AdminOrderController extends Controller
     {
         $orders = [
             [
+                'id' => 1,
                 'reservation_by' => 'John Doe',
                 'restaurant' => 'The Grill House',
                 'number_of_people' => 4,
@@ -18,6 +19,7 @@ class AdminOrderController extends Controller
                 'details' => 'Birthday Celebration'
             ],
             [
+                'id' => 2,
                 'reservation_by' => 'Jane Smith',
                 'restaurant' => 'Bistro 51',
                 'number_of_people' => 2,
@@ -26,6 +28,7 @@ class AdminOrderController extends Controller
                 'details' => 'Anniversary Dinner'
             ],
             [
+                'id' => 3,
                 'reservation_by' => 'Bob Johnson',
                 'restaurant' => 'The Italian Kitchen',
                 'number_of_people' => 6,
@@ -34,6 +37,7 @@ class AdminOrderController extends Controller
                 'details' => 'Family Gathering'
             ],
             [
+                'id' => 4,
                 'reservation_by' => 'Maria Rodriguez',
                 'restaurant' => 'Seafood Heaven',
                 'number_of_people' => 3,
@@ -42,6 +46,7 @@ class AdminOrderController extends Controller
                 'details' => 'Business Lunch'
             ],
             [
+                'id' => 5,
                 'reservation_by' => 'David Lee',
                 'restaurant' => 'The Chinese Restaurant',
                 'number_of_people' => 5,
@@ -50,6 +55,7 @@ class AdminOrderController extends Controller
                 'details' => 'Friends Reunion'
             ],
             [
+                'id' => 6,
                 'reservation_by' => 'Emily Chen',
                 'restaurant' => 'The Sushi Place',
                 'number_of_people' => 2,
@@ -58,6 +64,7 @@ class AdminOrderController extends Controller
                 'details' => 'Date Night'
             ],
             [
+                'id' => 7,
                 'reservation_by' => 'Michael Brown',
                 'restaurant' => 'The Steak House',
                 'number_of_people' => 4,
@@ -66,6 +73,7 @@ class AdminOrderController extends Controller
                 'details' => 'Birthday Party'
             ],
             [
+                'id' => 8,
                 'reservation_by' => 'Sophia Patel',
                 'restaurant' => 'The Indian Cafe',
                 'number_of_people' => 3,
@@ -74,6 +82,7 @@ class AdminOrderController extends Controller
                 'details' => 'Family Dinner'
             ],
             [
+                'id' => 9,
                 'reservation_by' => 'Kevin White',
                 'restaurant' => 'The Coffee Shop',
                 'number_of_people' => 2,
@@ -82,6 +91,7 @@ class AdminOrderController extends Controller
                 'details' => 'Business Meeting'
             ],
             [
+                'id' => 10,
                 'reservation_by' => 'Rachel Kim',
                 'restaurant' => 'The Korean BBQ',
                 'number_of_people' => 5,
@@ -97,6 +107,7 @@ class AdminOrderController extends Controller
     {
         $orders = [
             [
+                'id' => 1,
                 'reservation_by' => 'John Doe',
                 'restaurant' => 'The Grill House',
                 'number_of_people' => 4,
@@ -105,6 +116,7 @@ class AdminOrderController extends Controller
                 'details' => 'Birthday Celebration'
             ],
             [
+                'id' => 2,
                 'reservation_by' => 'Jane Smith',
                 'restaurant' => 'Bistro 51',
                 'number_of_people' => 2,
@@ -113,6 +125,7 @@ class AdminOrderController extends Controller
                 'details' => 'Anniversary Dinner'
             ],
             [
+                'id' => 3,
                 'reservation_by' => 'Bob Johnson',
                 'restaurant' => 'The Italian Kitchen',
                 'number_of_people' => 6,
@@ -121,6 +134,7 @@ class AdminOrderController extends Controller
                 'details' => 'Family Gathering'
             ],
             [
+                'id' => 4,
                 'reservation_by' => 'Maria Rodriguez',
                 'restaurant' => 'Seafood Heaven',
                 'number_of_people' => 3,
@@ -129,6 +143,7 @@ class AdminOrderController extends Controller
                 'details' => 'Business Lunch'
             ],
             [
+                'id' => 5,
                 'reservation_by' => 'David Lee',
                 'restaurant' => 'The Chinese Restaurant',
                 'number_of_people' => 5,
@@ -137,6 +152,7 @@ class AdminOrderController extends Controller
                 'details' => 'Friends Reunion'
             ],
             [
+                'id' => 6,
                 'reservation_by' => 'Emily Chen',
                 'restaurant' => 'The Sushi Place',
                 'number_of_people' => 2,
@@ -145,6 +161,7 @@ class AdminOrderController extends Controller
                 'details' => 'Date Night'
             ],
             [
+                'id' => 7,
                 'reservation_by' => 'Michael Brown',
                 'restaurant' => 'The Steak House',
                 'number_of_people' => 4,
@@ -153,6 +170,7 @@ class AdminOrderController extends Controller
                 'details' => 'Birthday Party'
             ],
             [
+                'id' => 8,
                 'reservation_by' => 'Sophia Patel',
                 'restaurant' => 'The Indian Cafe',
                 'number_of_people' => 3,
@@ -161,6 +179,7 @@ class AdminOrderController extends Controller
                 'details' => 'Family Dinner'
             ],
             [
+                'id' => 9,
                 'reservation_by' => 'Kevin White',
                 'restaurant' => 'The Coffee Shop',
                 'number_of_people' => 2,
@@ -169,6 +188,7 @@ class AdminOrderController extends Controller
                 'details' => 'Business Meeting'
             ],
             [
+                'id' => 10,
                 'reservation_by' => 'Rachel Kim',
                 'restaurant' => 'The Korean BBQ',
                 'number_of_people' => 5,
@@ -177,6 +197,7 @@ class AdminOrderController extends Controller
                 'details' => 'Group Outing'
             ]
         ];
+
         return response()->json($orders);
     }
 }

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @notifyCss
     @vite('resources/css/app.css')
     <title>Edit Category</title>
 </head>
@@ -44,4 +45,6 @@
             </table>
         </div>
     </div>
-    </
+    @include('notify::components.notify')
+    @notifyJs
+</body>

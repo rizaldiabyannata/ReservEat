@@ -21,20 +21,20 @@
                             @csrf
                             @method('PATCH')
                             <div class="flex flex-wrap mb-6">
-                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-                                <input type="text" id="name" name="name" value="{{ $user->name }}" class="w-full p-2 text-sm border border-black text-gray-700" required>
+                                <label for="name" class="block text-black text-sm font-bold mb-2">Name:</label>
+                                <input type="text" id="name" name="name" value="{{ $user->name }}" class="w-full rounded-md p-2 text-sm border border-black text-black" required>
                             </div>
                             <div class="flex flex-wrap mb-6">
-                                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                                <input type="email" id="email" name="email" value="{{ $user->email }}" class="w-full p-2 text-sm border border-black text-gray-700" required>
+                                <label for="email" class="block text-black text-sm font-bold mb-2">Email:</label>
+                                <input type="email" id="email" name="email" value="{{ $user->email }}" class="w-full rounded-md p-2 text-sm border border-black text-black" required>
                             </div>
                             <div class="flex flex-wrap mb-6">
-                                <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone:</label>
-                                <input type="tel" id="phone" name="phone" value="{{ $user->phone }}" class="w-full p-2 text-sm border border-black text-gray-700" required>
+                                <label for="phone" class="block text-black text-sm font-bold mb-2">Phone:</label>
+                                <input type="tel" id="phone" name="phone" value="{{ $user->phone }}" class="w-full rounded-md p-2 text-sm border border-black text-black" required>
                             </div>
                             <div class="flex flex-wrap mb-6">
-                                <label for="role" class="block text-gray-700 text-sm font-bold mb-2">Role:</label>
-                                <select id="role" name="role" class="w-full p-2 text-sm text-gray-700" required>
+                                <label for="role" class="block text-black text-sm font-bold mb-2">Role:</label>
+                                <select id="role" name="role" class="w-full rounded-md border border-black p-2 text-sm text-black" required>
                                     <option value="">Select Role</option>
                                     <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
                                     <option value="restaurant" {{ $user->role == 'moderator' ? 'selected' : '' }}>Restaurant</option>
@@ -42,8 +42,12 @@
                                 </select>
                             </div>
                             <div class="flex flex-wrap mb-6">
-                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
-                                <input type="password" id="password" name="password" class="w-full p-2 text-sm border border-black text-gray-700">
+                                <label for="password" class="block text-black text-sm font-bold mb-2">Password:</label>
+                                <input type="password" value='{{$user->password}}' id="password" name="password" class="w-full rounded-md p-2 text-sm border border-black text-black">
+                            </div>
+                            <div class="flex flex-wrap mb-6">
+                                <label for="photo" class="block text-black text-sm font-bold mb-2">photo:</label>
+                                <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" class="w-full rounded-md p-2 text-sm border border-black text-black">
                             </div>
                             <div class="flex justify-end">
                                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Profile</button>

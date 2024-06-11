@@ -45,7 +45,7 @@
                                 <td class="px-6 py-4">{{ $restaurant['phone'] }}</td>
                                 <td class="px-6 py-4">{{ $restaurant['rating'] }}</td>
                                 <td class="px-6 py-4 flex flex-row space-x-2">
-                                    <a href="{{'/admin/editrestaurant/form/'. $restaurant->id}}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#8739f9] hover:bg-[#7849d8]">
+                                    <a href="{{'/admin/editrestaurant/form/'. $restaurant['id']}}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#8739f9] hover:bg-[#7849d8]">
                                         Edit
                                     </a>
 

@@ -78,8 +78,20 @@
                         @enderror
                     </div>
                 </div>
-
-
+                <div>
+                    <label for="gender" class="block text-sm font-medium leading-6 text-gray-900">Gender</label>
+                    <div class="mt-2">
+                        <select id="gender" name="gender" required class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <option value="" selected></option>
+                            <option value="male">Man</option>
+                            <option value="female">Female</option>
+                            <option value="default">Secret</option>
+                        </select>
+                        @error('gender')
+                        <div class="text-xs text-red-500">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
                 <div>
                     <button type="submit" class="flex w-full justify-center rounded-md bg-peachy-brown px-3 font-['Montserrat'] py-1.5 text-sm font-semibold leading-6 text-black shadow-sm">Register</button>
                 </div>

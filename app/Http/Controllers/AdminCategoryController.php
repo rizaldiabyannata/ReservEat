@@ -107,7 +107,7 @@ class AdminCategoryController extends Controller
                 unlink($imagePath);
             }
             notify()->success('Berhasil Menghapus Category ' . $category['category_name']);
-            return redirect('admin/categorys')->with('success', 'Category deleted successfully');
+            return redirect()->back()->with('success', 'Category deleted successfully');
         } else {
             notify()->warning('Menghapus Gagal');
             return redirect()->back()->with('error', 'Category not found');

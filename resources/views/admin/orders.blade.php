@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @notifyCss
     @vite('resources/css/app.css')
     <title>Orders</title>
 </head>
@@ -77,16 +78,39 @@
                             <td class="px-6 py-4">{{$order['time_reservation']}}</td>
                             <td class="px-6 py-4">{{$order['details']}}</td>
                             <td class="px-6 py-4">
-                                <button class="btn" type="button">
-                                    View Details
-                                </button>
+                                <button class="btn" type="button" data-toggle="modal" data-target="#view-detail-{{ $order['id']}}" onclick="openModal(`{{ $order['id'] }}`)">View Details</button>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+                <div class="modal hidden" id="view-detail-{{ $order['id'] }}" tabindex="-1" aria-labelledby="view-detail-{{ $order['id'] }}Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="view-detail-{{ $order['id'] }}Label">Order Details</h5>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Reservation By: {{ $order['reservation_by'] }}</p>
+                                <p>Restaurant: {{ $order['restaurant'] }}</p>
+                                <p>Number of People: {{ $order['number_of_people'] }}</p>
+                                <p>Created At: {{ $order['created_at'] }}</p>
+                                <p>Time Reservation: {{ $order['time_reservation'] }}</p>
+                                <p>Desc: {{ $order['details'] }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- <div class="w-full h-lvh relative z-10 flex justify-center bg-slate-300">
+            <div class="flex flex-col space-y-4">
+            </div>
+        </div> -->
     </div>
     <script>
         const ctx = document.getElementById('orders-chart').getContext('2d');
@@ -160,7 +184,14 @@
                 });
             })
             .catch(error => console.error('Error fetching data:', error));
+
+        function openModal(id) {
+            const modal = document.getElementById($(`#view-detail-${id}`))
+            modal.classList.add('block')
+        }
     </script>
+    @include('notify::components.notify')
+    @notifyJs
 </body>
 
 </html>

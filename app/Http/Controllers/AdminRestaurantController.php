@@ -8,6 +8,7 @@ use App\Models\Reviews;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Validation\ValidationException;
 
 class AdminRestaurantController extends Controller
 {
@@ -23,6 +24,7 @@ class AdminRestaurantController extends Controller
         }
         return view('admin.restaurants', compact('restaurantsWithRatings'));
     }
+
     public function getRestaurants()
     {
 
@@ -81,13 +83,14 @@ class AdminRestaurantController extends Controller
     public function formEdit($id)
     {
         $restaurant = Restaurant::find($id);
-        $categories = Restaurant_categories::all();
+        $categories = Restaurant_categories::whereNotIn('id', [$restaurant->category_id])->get();
+        $restaurantCategory = Restaurant_categories::find($restaurant->category_id);
 
         if (!$restaurant) {
             return redirect('/admin/restaurants')->with('error', 'User not found');
         }
 
-        return view('admin.formeditrestaurant', compact('restaurant', 'categories'));
+        return view('admin.formeditrestaurant', compact('restaurant', 'categories', 'restaurantCategory'));
     }
 
     public function destroy($id): RedirectResponse
@@ -102,24 +105,24 @@ class AdminRestaurantController extends Controller
         return redirect('/admin/restaurants')->with('success', 'User deleted successfully');
     }
 
-    public function create(Request $request): RedirectResponse
+    public function create(Request $request)
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'phone_number' => 'required|string|max:20',
-            'open_time' => 'required|string|max:10',
-            'close_time' => 'required|string|max:10',
-            'email' => 'required|string|email|max:255|unique:restaurants',
-            'password' => 'required|string|min:8|confirmed',
+            'open_time' => 'required',
+            'close_time' => 'required',
+            'number_of_tables' => 'required',
             'category_id' => 'required|exists:restaurant_categories,id',
-            'photo_path' => 'nullable|image|max:2048',
+            'user_id' => 'required',
+            'photo_path' => 'required'
         ]);
 
         if ($request->hasFile('photo_path')) {
             $file = $request->file('photo_path');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('assets/restaurants'), $fileName);
+            $file->move(public_path('assets/restaurantPhoto'), $fileName);
             $data['photo_path'] = $fileName;
         }
 
@@ -127,9 +130,9 @@ class AdminRestaurantController extends Controller
             $restaurant = Restaurant::create($data);
             notify()->success('Berhasil menambahkan restaurant ' . $restaurant->name);
             return redirect('/admin/restaurants');
-        } catch (\Exception $e) {
-            notify()->warning('Gagal menambahkan restaurant');
-            return redirect()->back()->withInput()->withErrors(['error' => 'Gagal menambahkan restaurant. ' . $e->getMessage()]);
+        } catch (ValidationException $e) {
+            notify()->warning('Gagal menambahkan restaurant' . $e);
+            return redirect('/admin/users')->withErrors(['error' => 'Gagal menambahkan restaurant. ' . $e->getMessage()]);
         }
     }
 }

@@ -32,6 +32,7 @@ Route::get('/reservation', [ClientReservationController::class, 'index']);
 Route::get('/profile', [ClientProfileController::class, 'index']);
 
 Route::get('/admin/dashboard', [AdminHomeController::class, 'index'])->middleware('IsAdmin');
+
 Route::get('/admin/users', [AdminUserController::class, 'index'])->middleware('IsAdmin');
 Route::get('/admin/adduser', [AdminUserController::class, 'addUser'])->middleware('IsAdmin');
 Route::post('/admin/adduser', [AdminUserController::class, 'store'])->middleware('IsAdmin');

@@ -35,6 +35,17 @@ class AdminUserController extends Controller
                 $data['gender'] = $request->input('gender');
             }
 
+            if ($request->hasFile('photo')) {
+                $file = $request->file('photo');
+                if ($data['gender'] === 'male') {
+                    $data['photo'] = 'forMale.jpg';
+                } elseif ($data['gender'] === 'female') {
+                    $data['photo'] = 'forMale.jpg';
+                } else {
+                    $data['photo'] = 'default-avatar.jpg';
+                }
+            }
+
             $user = User::create($data);
             notify()->success('Menambahkan User ' . $data['name']);
             return redirect('/admin/users')->with('success', 'User created successfully');

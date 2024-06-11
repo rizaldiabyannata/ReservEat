@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @notifyCss
     @vite('resources/css/app.css')
     <title>My Profile</title>
 </head>
@@ -15,6 +16,7 @@
         <div class="p-4">
             <h1 class="text-2xl font-bold mb-4 text-center">My Profile</h1>
             <div class="flex flex-row justify-center items-center space-x-10">
+                <img class="w-40 rounded-full" src="{{ URL::to('/assets/profiles/' . $user->photo) }}" alt="profile" srcset="">
                 <div class="flex flex-row space-x-6">
                     <div class="mb-4">
                         <label class="block font-bold mb-2">Name</label>
@@ -41,6 +43,8 @@
             </div>
         </div>
     </div>
+    @include('notify::components.notify')
+    @notifyJs
 </body>
 
 </html>

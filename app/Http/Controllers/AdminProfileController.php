@@ -44,12 +44,19 @@ class AdminProfileController extends Controller
                 $data['password'] = Hash::make($request->input('password'));
             }
 
+            if ($request->hasFile('photo')) {
+                $file = $request->file('photo');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('assets/profiles'), $fileName);
+                $data['photo'] = $fileName;
+            }
+            $request->session()->regenerate();
             $user->update($data);
             notify()->success('Berhasil Update ' . $data['name']);
-            return redirect('/admin/users')->with('success', 'User updated successfully');
+            return redirect('/admin/myprofile')->with('success', 'User updated successfully');
         } catch (ValidationException $e) {
             notify()->warning('Gagal Update ' . $data['name'] . " Karena " . $e);
-            return redirect('admin/dashboard')->with($e->validator);
+            return redirect()->back()->with($e->validator);
         }
     }
 }

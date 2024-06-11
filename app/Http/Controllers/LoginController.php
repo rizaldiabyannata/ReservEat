@@ -31,6 +31,7 @@ class LoginController extends Controller
             } elseif ($user && $user->role === 'restaurant') {
                 return redirect()->intended('/restaurant/dashboard');
             } else {
+                notify()->success('');
                 return redirect()->intended('/home');
             }
         }

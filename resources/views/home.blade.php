@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReservEat - Restaurant Selection</title>
+    @notifyCss
     @vite('resources/css/app.css')
     <style>
         .bg-peachy-brown {
@@ -87,6 +88,8 @@
     <footer class="bg-dark-peach py-6 px-10 text-black text-center">
         <p>&copy; 2024 ReservEat. All rights reserved.</p>
     </footer>
+    @include('notify::components.notify')
+    @notifyJs
 </body>
 
 </html>

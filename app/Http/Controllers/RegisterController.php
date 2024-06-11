@@ -17,26 +17,54 @@ class RegisterController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'phone' => 'required|string|max:20',
-            'password' => 'required|string|min:8|confirmed',
-            'password_confirmation' => 'required|string|min:8',
-        ]);
-
         try {
-            $user = User::create([
-                'name' => $request->input('name'),
-                'email' => $request->input('email'),
-                'phone' => $request->input('phone'),
-                'password' => Hash::make($request->input('password')),
-                'role' => 'customer', // set the role to customer
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email',
+                'password' => 'required|min:8|confirmed',
+                'password_confirmation' => 'required',
+                'phone' => 'required',
+                'gender' => 'nullable',
+                'photo' => 'nullable',
             ]);
-            notify()->success('Register Berhasil!');
-            return redirect('/login')->with('success', 'You have successfully registered!');
+
+            $user = new User();
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->password = Hash::make($request->input('password'));
+            $user->phone = $request->input('phone');
+            $user->role = 'customer';
+
+            if ($request->has('gender')) {
+                $user->gender = $request->input('gender');
+            }
+
+            if ($request->hasFile('photo')) {
+                $file = $request->file('photo');
+                $filename = 'default-avatar.jpg';
+
+                if ($request->input('gender') === 'male') {
+                    $filename = 'forMale.jpg';
+                } elseif ($request->input('gender') === 'female') {
+                    $filename = 'forFemale.jpg';
+                }
+
+                $user->photo = $filename;
+            } else {
+                $user->photo = 'default-avatar.jpg';
+            }
+
+            $user->save();
+
+            notify()->success('Selamat Datang ' . $user->name);
+            auth()->login($user);
+            return redirect('/home')->with('success', 'User registered');
+        } catch (ValidationException $e) {
+            notify()->warning('Gagal Register');
+            return redirect()->back()->withInput()->withErrors($e->validator);
         } catch (\Exception $e) {
-            return back()->withErrors(['register' => 'Failed to register. Please try again.'])->withInput();
+            notify()->error('Error registering user: ' . $e->getMessage());
+            return redirect()->back()->withInput();
         }
     }
 }
