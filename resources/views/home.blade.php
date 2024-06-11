@@ -31,21 +31,21 @@
     <div class="carousel w-full py-6">
         <div id="item1" class="carousel-item w-full">
             <img src="{{ asset('/assets/images/Banner-1.png') }}" class="w-full" />
-        </div>
+        </div> 
         <div id="item2" class="carousel-item w-full">
             <img src="{{ asset('/assets/images/Banner-2.png') }}" class="w-full" />
-        </div>
+        </div> 
         <div id="item3" class="carousel-item w-full">
             <img src="{{ asset('/assets/images/Banner-3.png') }}" class="w-full" />
-        </div>
+        </div> 
         <div id="item4" class="carousel-item w-full">
             <img src="{{ asset('/assets/images/Banner-4.png') }}" class="w-full" />
         </div>
-    </div>
+    </div> 
     <div class="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" class="btn btn-xs">1</a>
-        <a href="#item2" class="btn btn-xs">2</a>
-        <a href="#item3" class="btn btn-xs">3</a>
+        <a href="#item1" class="btn btn-xs">1</a> 
+        <a href="#item2" class="btn btn-xs">2</a> 
+        <a href="#item3" class="btn btn-xs">3</a> 
         <a href="#item4" class="btn btn-xs">4</a>
     </div>
 
