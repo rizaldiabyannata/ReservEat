@@ -1,4 +1,3 @@
-<!-- resources/views/restaurant/menu.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +19,9 @@
                     @endforeach
                 </select>
             </div>
-            <div id="menuGrid" class="grid grid-cols-3 gap-10">
+            <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 @foreach ($menus as $menu)
-                    <div class="menu-item flex justify-center items-center w-72 h-52 border border-gray-400 rounded-md bg-gray-200 transform transition-transform hover:scale-105 hover:-translate-y-2" data-category="{{ $menu['category'] }}">
+                    <div class="menu-item flex justify-center items-center w-full md:w-72 h-52 border border-gray-400 rounded-md bg-gray-200 transform transition-transform hover:scale-105 hover:-translate-y-2" data-category="{{ $menu['category'] }}">
                         <h3 class="text-center text-black text-lg font-bold">{{ $menu['name'] }}</h3>
                     </div>
                 @endforeach

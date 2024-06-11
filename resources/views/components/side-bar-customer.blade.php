@@ -56,3 +56,22 @@
         </div>
     </aside>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sidebarToggleBtn = document.querySelector('[data-drawer-toggle="default-sidebar"]');
+        const sidebar = document.getElementById('default-sidebar');
+
+        sidebarToggleBtn.addEventListener('click', function () {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        document.addEventListener('click', function (event) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnToggleButton = sidebarToggleBtn.contains(event.target);
+            if (!isClickInsideSidebar && !isClickOnToggleButton) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+    });
+</script>
