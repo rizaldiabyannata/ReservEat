@@ -26,10 +26,8 @@
             <div tabindex="0" role="button" class="flex items-center px-4 py-2 text-base font-normal text-gray-800 hover:border-b-2 hover:border-orange-300 transition-colors duration-300 ease-in-out dark:text-black">Reservasi</div>
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
                 <li><a href="/restaurants">Restaurant</a></li>
-                <li><a href="/menus">Menu</a></li>
             </ul>
         </div>
-        <a href="/about-us" class="flex items-center px-4 py-2 text-base font-normal text-gray-800 hover:border-b-2 hover:border-orange-300 transition-colors duration-300 ease-in-out dark:text-black">About Us</a>
     </div>
     <div>
         <div class="dropdown dropdown-hover relative">
