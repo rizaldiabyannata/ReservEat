@@ -15,13 +15,15 @@ class AdminProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('admin.profile', compact('user'));
+        $authUser = Auth::user();
+        return view('admin.profile', compact('user', 'authUser'));
     }
 
     public function editProfile($id)
     {
         $user = User::find($id);
-        return view('admin.editprofile', compact('user'));
+        $authUser = Auth::user();
+        return view('admin.editprofile', compact('user', 'authUser'));
     }
 
     public function updateProfile(Request $request, $id)
@@ -50,7 +52,6 @@ class AdminProfileController extends Controller
                 $file->move(public_path('assets/profiles'), $fileName);
                 $data['photo'] = $fileName;
             }
-            $request->session()->regenerate();
             $user->update($data);
             notify()->success('Berhasil Update ' . $data['name']);
             return redirect('/admin/myprofile')->with('success', 'User updated successfully');

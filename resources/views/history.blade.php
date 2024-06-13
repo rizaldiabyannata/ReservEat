@@ -10,7 +10,7 @@
 
 <body class="font-['Montserrat']">
     <x-side-bar-customer></x-side-bar-customer>
-    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="flex min-h-full flex-col justify-center ml-60 px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-lg">
             <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">History</h2>
         </div>
@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="collapse-content">
-                        <p>Menu A :</p>
-                        <p>Menu B :</p>
+                    <p>Menu A :</p>
+                    <p>Menu B :</p>
                 </div>
             </div>
             <div tabindex="0" class="collapse collapse-arrow border-b border-gray-300 py-4">
@@ -79,11 +79,12 @@
                     </div>
                 </div>
                 <div class="collapse-content">
-                        <p>Menu A :</p>
-                        <p>Menu B :</p>
+                    <p>Menu A :</p>
+                    <p>Menu B :</p>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

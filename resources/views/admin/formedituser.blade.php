@@ -12,8 +12,8 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / edituser / form' titlepage='Form Update'></x-admin-nav>
-        <div class="px-4">
+        <x-admin-nav router='admin / edituser / form' titlepage='Form Update' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
+        <div class=" px-4">
             <div class="flex items-center justify-center p-12">
                 <div class="w-full xl:w-2/3 lg:w-3/4 md:w-4/5 sm:w-full xs:w-full pb-10">
                     <div class="bg-white p-4 rounded-lg shadow-md">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
     @include('notify::components.notify')
     @notifyJs

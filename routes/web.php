@@ -18,6 +18,7 @@ use App\Http\Controllers\RestaurantProfilerestoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RestaurantHomeController;
+use App\Http\Controllers\RestaurantReviewCustomerController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\ValidateRole;
 use Illuminate\Support\Facades\Route;
@@ -26,10 +27,16 @@ Route::get('/', [ClientHomeController::class, 'index']);
 Route::get('/home', [ClientHomeController::class, 'index']);
 Route::get('/category', [ClientCategoryController::class, 'index']);
 Route::get('/restaurants', [ClientRestaurantsController::class, 'index']);
-Route::get('/restaurants/menu', [ClientRestaurantsController::class, 'menu']);
-Route::get('/restaurants/detail', [ClientRestaurantsController::class, 'detail']);
-Route::get('/reservation', [ClientReservationController::class, 'index']);
+Route::get('/restaurants/{name}', [ClientRestaurantsController::class, 'bycategory']);
+Route::get('/menus', [ClientRestaurantsController::class, 'menu']);
+Route::get('/restaurants/{id}/detail', [ClientRestaurantsController::class, 'detail']);
+Route::get('/restaurants/{id}/reservation', [ClientRestaurantsController::class, 'reservation']);
+Route::post('/restaurants/{id}/reservation', [ClientRestaurantsController::class, 'reservationStore']);
 Route::get('/profile', [ClientProfileController::class, 'index']);
+Route::get('/profile/edit', [ClientProfileController::class, 'editprofile']);
+Route::patch('/profile/edit', [ClientProfileController::class, 'updateProfile']);
+Route::get('/profile/reservation', [ClientProfileController::class, 'reservation']);
+Route::get('/profile/history', [ClientProfileController::class, 'history']);
 
 Route::get('/admin/dashboard', [AdminHomeController::class, 'index'])->middleware('IsAdmin');
 
@@ -66,14 +73,19 @@ Route::patch('/admin/editprofile/{id}', [AdminProfileController::class, 'updateP
 // API
 Route::get('/api/getorders', [AdminOrderController::class, 'getOrders']);
 Route::get('/api/getrestaurants', [AdminRestaurantController::class, 'getRestaurants']);
-Route::get('/api/getsessiondata', [AdminHomeController::class, 'getSessionData']);
+Route::get('/api/getsessiondata', [AdminHomeController::class, 'getSessionDataAPI']);
+Route::get('/api/{id}/reservation-data/', [ClientRestaurantsController::class, 'reservationData']);
 
 
 Route::get('/restaurantadmin/dashboard', [RestaurantHomeController::class, 'index']);
 Route::get('/restaurantadmin/addmenu', [RestaurantMenuController::class, 'addMenu']);
 Route::post('/restaurantadmin/addmenu', [RestaurantMenuController::class, 'store']);
+Route::get('/restaurantadmin/{id}/editmenu', [RestaurantMenuController::class, 'editForm']);
+Route::patch('/restaurantadmin/{id}/editmenu', [RestaurantMenuController::class, 'update']);
+Route::delete('/restaurantadmin/{id}/deletemenu', [RestaurantMenuController::class, 'destroy']);
 Route::get('/restaurantadmin/pesanan', [RestaurantPesananController::class, 'Pesanan']);
 Route::get('/restaurantadmin/daftarmenu', [RestaurantMenuController::class, 'index']);
+Route::get('/restaurantadmin/review-customer', [RestaurantReviewCustomerController::class, 'reviewCustomer']);
 Route::get('/restaurantadmin/profileresto', [RestaurantProfilerestoController::class, 'profileresto']);
 
 Route::get('/login', [LoginController::class, 'index']);
@@ -82,4 +94,4 @@ Route::post('/login', [LoginController::class, 'auth']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout']);

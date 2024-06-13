@@ -19,7 +19,7 @@ class IsAdmin
         if (Auth::user() && Auth::user()->role == 'admin') {
             return $next($request);
         }
-        notify()->warning('Kamu tidak punya akses ke page ini');
+        notify()->warning('Kamu tidak punya akses ke page ini kamu adalah ' . Auth::user()->role);
         return redirect('/login');
     }
 }

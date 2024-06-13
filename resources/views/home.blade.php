@@ -20,74 +20,72 @@
 
 <body class="font-content">
     <x-nav-bar></x-nav-bar>
-    <div class="h-[80lvh] text-white text-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1481833761820-0509d3217039?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D');">
-        <div class="h-full flex flex-col justify-center items-center backdrop-blur-sm rounded-lg">
-            <h1 class="text-5xl font-bold mb-4" style="-webkit-text-stroke: 2px black;">Welcome to ReservEat</h1>
-            <p class="text-lg mb-8">Your ultimate destination to find the best dining experience..</p>
-            <a href="/restaurant" class="bg-peachy-brown text-black hover:bg-stone-500 hover:text-white py-2 px-6 rounded-full font-semibold transition duration-300">Book a Table</a>
+    <div class="h-lvh text-white text-center py-10">
+        <img class="object-cover" src="{{ asset('/assets/images/banner.jpg') }}" alt="" srcset="">
+    </div>
+
+    <div class="flex mt-40 flex-col">
+        <h1 class="text-6xl text-center font-bold py-10">Special Offer</h1>
+        <div class="carousel w-full py-6">
+            <div id="item1" class="carousel-item w-full">
+                <img src="{{ asset('/assets/images/Banner-1.png') }}" class="w-full" />
+            </div>
+            <div id="item2" class="carousel-item w-full">
+                <img src="{{ asset('/assets/images/Banner-2.png') }}" class="w-full" />
+            </div>
+            <div id="item3" class="carousel-item w-full">
+                <img src="{{ asset('/assets/images/Banner-3.png') }}" class="w-full" />
+            </div>
+            <div id="item4" class="carousel-item w-full">
+                <img src="{{ asset('/assets/images/Banner-4.png') }}" class="w-full" />
+            </div>
+        </div>
+        <div class="flex justify-center w-full py-2 gap-2">
+            <a href="#item1" class="btn btn-xs">1</a>
+            <a href="#item2" class="btn btn-xs">2</a>
+            <a href="#item3" class="btn btn-xs">3</a>
+            <a href="#item4" class="btn btn-xs">4</a>
         </div>
     </div>
 
-    <div class="carousel w-full py-6">
-        <div id="item1" class="carousel-item w-full">
-            <img src="{{ asset('/assets/images/Banner-1.png') }}" class="w-full" />
-        </div> 
-        <div id="item2" class="carousel-item w-full">
-            <img src="{{ asset('/assets/images/Banner-2.png') }}" class="w-full" />
-        </div> 
-        <div id="item3" class="carousel-item w-full">
-            <img src="{{ asset('/assets/images/Banner-3.png') }}" class="w-full" />
-        </div> 
-        <div id="item4" class="carousel-item w-full">
-            <img src="{{ asset('/assets/images/Banner-4.png') }}" class="w-full" />
-        </div>
-    </div> 
-    <div class="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" class="btn btn-xs">1</a> 
-        <a href="#item2" class="btn btn-xs">2</a> 
-        <a href="#item3" class="btn btn-xs">3</a> 
-        <a href="#item4" class="btn btn-xs">4</a>
-    </div>
-
-    <div class="container mx-auto py-16 px-4">
+    <div class="flex justify-center items-center flex-col py-16 px-4 mx-6">
         <h2 class="text-3xl font-bold mb-8 text-center">Choose Your Restaurant</h2>
         <div id="carousel" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            @foreach($restaurants as $restaurant)
             <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:-translate-y-2">
-                <img src="https://via.placeholder.com/300" alt="Restaurant" class="w-full">
+                <img class="h-60" src="{{ URL::to('/assets/restaurantPhoto/' . $restaurant['photo_path'])}}" alt="Restaurant photo" class="w-full">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Restaurant A</h3>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit.</p>
-                    <a href="/restaurant/restaurantdetails" class="bg-peachy-brown text-black py-2 px-6 rounded-full font-semibold mt-4 inline-block">View Detail</a>
+                    <h3 class="text-xl font-semibold mb-2">{{$restaurant['name']}}</h3>
+                    <p class="text-gray-700">{{$restaurant['address']}}</p>
+                    <a href="/restaurant/restaurantdetails" class="bg-peachy-brown text-black py-2 px-6 rounded-md font-semibold mt-4 inline-block">View Detail</a>
                 </div>
             </div>
-            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:-translate-y-2">
-                <img src="https://via.placeholder.com/300" alt="Restaurant" class="w-full">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Restaurant B</h3>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit.</p>
-                    <a href="#" class="bg-peachy-brown text-black py-2 px-6 rounded-full font-semibold mt-4 inline-block">View Detail</a>
-                </div>
-            </div>
-            <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:-translate-y-2">
-                <img src="https://via.placeholder.com/300" alt="Restaurant" class="w-full">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Restaurant C</h3>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit.</p>
-                    <a href="#" class="bg-peachy-brown text-black py-2 px-6 rounded-full font-semibold mt-4 inline-block">View Detail</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-peachy-brown py-24 px-10 text-black">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">About Us</h2>
-                <p class="text-lg mb-8 text-center">Tujuan dari website ini adalah untuk memudahkan Anda dalam mencari dan memesan tempat serta makanan di suatu restoran sehingga Anda dapat menikmati pelayanan lebih cepat. Kami memahami bahwa Anda mungkin memiliki jadwal yang padat dan tidak banyak waktu untuk memesan dan menunggu. Selain itu, jika Anda ingin mengatur acara grup di sebuah restoran, kami siap membantu Anda dengan menyediakan layanan yang cepat dan efisien.</p>
-            </div>
+            @endforeach
         </div>
     </div>
-    <footer class="bg-dark-peach py-6 px-10 text-black text-center">
-        <p>&copy; 2024 ReservEat. All rights reserved.</p>
+    <footer class="footer p-10 bg-[#FAE8DC] text-black">
+        <aside>
+            <img class="w-16" src="{{ asset('/assets/images/weblogo.png') }}" alt="" srcset="">
+            <p>ReservEat<br>Providing reliable reservation online since 2024</p>
+        </aside>
+        <nav>
+            <h6 class="footer-title">Social</h6>
+            <div class="grid grid-flow-col gap-4">
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                    </svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                    </svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                    </svg></a>
+            </div>
+        </nav>
     </footer>
+    <div>
+        <p class="bg-[#22262A] text-white text-center py-4">&copy; 2024 ReservEat. All rights reserved.</p>
+    </div>
     @include('notify::components.notify')
     @notifyJs
 </body>

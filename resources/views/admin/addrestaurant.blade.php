@@ -16,7 +16,7 @@
 <body>
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / addrestaurant' titlepage='Add Restaurant'></x-admin-nav>
+        <x-admin-nav router='admin / addrestaurant' titlepage='Add Restaurant' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="p-4">
             <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
                 <form method="POST" action="/admin/addrestaurant" enctype="multipart/form-data">

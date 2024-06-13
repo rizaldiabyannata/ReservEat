@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
 class AdminUserController extends Controller
@@ -15,7 +16,8 @@ class AdminUserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.users', compact('users'));
+        $authUser = Auth::user();
+        return view('admin.users', compact('users', 'authUser'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -73,13 +75,15 @@ class AdminUserController extends Controller
 
     public function addUser()
     {
-        return view('admin.adduser');
+        $authUser = Auth::user();
+        return view('admin.adduser', compact('authUser'));
     }
 
     public function editUser()
     {
         $users = User::all();
-        return view('admin.edituser', compact('users'));
+        $authUser = Auth::user();
+        return view('admin.edituser', compact('users', 'authUser'));
     }
 
     public function formedit($id)
@@ -89,8 +93,8 @@ class AdminUserController extends Controller
         if (!$user) {
             return redirect('/admin/users')->with('error', 'User not found');
         }
-
-        return view('admin.formedituser', compact('user'));
+        $authUser = Auth::user();
+        return view('admin.formedituser', compact('user', 'authuser'));
     }
 
     public function update(Request $request, $id): RedirectResponse

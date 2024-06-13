@@ -84,7 +84,7 @@ class AdminCategoryController extends Controller
                 $data['path'] = $fileName;
                 // Delete the old image
                 if ($category->path) {
-                    unlink(public_path('assets/restaurantCategory/' . $category->path));
+                    unlink(public_path('assets/restaurantCategory' . $category->path));
                 }
             }
 

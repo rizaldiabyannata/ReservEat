@@ -11,7 +11,7 @@
 <body>
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / editrestaurant' titlepage='Edit Restaurant'></x-admin-nav>
+        <x-admin-nav router='admin / editrestaurant' titlepage='Edit Restaurant' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="px-4">
             <div class="container mx-auto p-4">
                 <div class="overflow-x-auto sm:rounded-lg">

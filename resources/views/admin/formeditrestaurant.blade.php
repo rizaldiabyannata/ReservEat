@@ -11,12 +11,12 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / editrestaurant / form' titlepage='Form Update'></x-admin-nav>
+        <x-admin-nav router='admin / editrestaurant / form' titlepage='Form Update' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="px-4">
             <div class="flex items-center justify-center p-12">
                 <div class="w-full xl:w-2/3 lg:w-3/4 md:w-4/5 sm:w-full xs:w-full pb-10">
                     <div class="bg-white p-4 rounded-lg shadow-md text-black">
-                        <form method="POST" action="{{ '/admin/editrestaurant/form/' . $restaurant->id }}">
+                        <form method="POST" action="{{ '/admin/editrestaurant/form/' . $restaurant->id }}" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <div class="flex flex-wrap mb-6">
@@ -45,8 +45,8 @@
                             </div>
                             <div class="flex flex-wrap mb-6">
                                 <label for="category_id" class="block text-black text-sm font-bold mb-2">Category:</label>
-                                <select id="category_id" name="category_id" class="w-full border border-black rounded-md p-2 text-sm text-black" required>
-                                    <option value="">{{$restaurantCategory->category_name}}</option>
+                                <select id="category_id" name="category_id" class="w-full border border-black rounded-md p-2 text-sm text-black">
+                                    <option value="" selected>{{$restaurantCategory->category_name}}</option>
                                     @foreach($categories as $category)
                                     <option value="{{ $category->id}}">{{ $category->category_name }}</option>
                                     @endforeach

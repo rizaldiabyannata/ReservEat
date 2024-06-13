@@ -2,7 +2,7 @@
 <div class="w-full flex flex-row justify-between items-center mb-6 lg:px-6 py-4 bg-[#F2F5F5] shadow-lg">
     <div class="flex flex-row space-x-4">
         <a href="/admin/myprofile">
-            <img id="profile" class="w-12 rounded-full" src="" alt="profile">
+            <img id="profile" class="w-12 rounded-full" src="{{$photo}}" alt="profile">
         </a>
         <div class="flex flex-col justify-end lg:justify-start">
             <p class="text-sm">{{$router}}</p>
@@ -65,7 +65,7 @@
                 loop: true,
             }).go();
 
-            document.getElementById('profile').src = `{{URL::to('/assets/profiles/${sessionData.photo}')}}`;
+            // document.getElementById('profile').src = `{{URL::to('/assets/profiles/${sessionData.photo}')}}`;
         } else {
             console.log('No session data available');
             new TypeIt("#element", {

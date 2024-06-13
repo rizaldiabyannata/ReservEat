@@ -13,7 +13,7 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="lg:ml-64">
-        <x-admin-nav router='admin / home' titlepage='Dashboard'></x-admin-nav>
+        <x-admin-nav router='admin / home' titlepage='Dashboard' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="p-4">
             <div class="mb-4">
                 <h1 class="font-['Montserrat'] font-bold text-lg lg:hidden" id='elementor'></h1>

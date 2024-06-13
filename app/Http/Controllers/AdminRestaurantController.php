@@ -8,6 +8,7 @@ use App\Models\Reviews;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
 class AdminRestaurantController extends Controller
@@ -16,13 +17,14 @@ class AdminRestaurantController extends Controller
     {
         $restaurants = Restaurant::all();
         $restaurantsWithRatings = [];
+        $authUser = Auth::user();
         foreach ($restaurants as $restaurant) {
             $avg_rating = Reviews::where('restaurant_id', $restaurant->id)
                 ->avg('rating');
             $restaurant->average_rating = $avg_rating;
             $restaurantsWithRatings[] = $restaurant;
         }
-        return view('admin.restaurants', compact('restaurantsWithRatings'));
+        return view('admin.restaurants', compact('restaurantsWithRatings', 'authUser'));
     }
 
     public function getRestaurants()
@@ -36,7 +38,8 @@ class AdminRestaurantController extends Controller
     {
         $userWithRoleRestaurant = User::where('role', 'restaurant')->get();
         $categories = Restaurant_categories::all();
-        return view('admin.addrestaurant', compact('categories', 'userWithRoleRestaurant'));
+        $authUser = Auth::user();
+        return view('admin.addrestaurant', compact('categories', 'userWithRoleRestaurant', 'authUser'));
     }
 
     public function editRestaurant()
@@ -49,7 +52,8 @@ class AdminRestaurantController extends Controller
             $restaurant->average_rating = $avg_rating;
             $restaurantsWithRatings[] = $restaurant;
         }
-        return view('admin.editrestaurant', compact('restaurantsWithRatings'));
+        $authUser = Auth::user();
+        return view('admin.editrestaurant', compact('restaurantsWithRatings', 'authUser'));
     }
 
     public function updateRestaurant(Request $request, $id)
@@ -61,20 +65,31 @@ class AdminRestaurantController extends Controller
             $restaurant->phone_number = $request->input('phone_number');
             $restaurant->open_time = $request->input('open_time');
             $restaurant->close_time = $request->input('close_time');
-            $restaurant->email = $request->input('email');
-            $restaurant->password = bcrypt($request->input('password'));
-            $restaurant->category_id = $request->input('category_id');
+
+            if ($request->has('category_id') && $request->input('category_id') != null) {
+                $restaurant->category_id = $request->input('category_id');
+            }
+
+            if ($request->hasFile('photo_path')) {
+                $file = $request->file('photo_path');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('assets/restaurantPhoto/'), $fileName);
+                $restaurant->photo_path = $fileName;
+                if ($restaurant->photo_path) {
+                    unlink(public_path('assets/restaurantPhoto/' . $restaurant->photo_path));
+                }
+            }
 
             if (empty($request->input('photo_path'))) {
-                $restaurant->photo_path = 'default_restaurant_image.jpg';
-            } else {
-                $restaurant->photo_path = $request->input('photo_path');
+                $restaurant['photo_path'] = 'default_restaurant_image.jpg';
             }
 
             $restaurant->save();
-            notify()->success('Berhasil Mengupdate restaurant' . $restaurant['name']);
+            
+            notify()->success('Berhasil Mengupdate restaurant ' . $restaurant['name']);
             return redirect('admin/restaurants');
         } else {
+            notify()->warning('Gagal Mengupdate restaurant ' . $restaurant['name']);
             return redirect()->back()->withInput()->withErrors('gagal');
         }
     }
@@ -89,8 +104,9 @@ class AdminRestaurantController extends Controller
         if (!$restaurant) {
             return redirect('/admin/restaurants')->with('error', 'User not found');
         }
+        $authUser = Auth::user();
 
-        return view('admin.formeditrestaurant', compact('restaurant', 'categories', 'restaurantCategory'));
+        return view('admin.formeditrestaurant', compact('restaurant', 'categories', 'restaurantCategory', 'authUser'));
     }
 
     public function destroy($id): RedirectResponse
@@ -122,7 +138,7 @@ class AdminRestaurantController extends Controller
         if ($request->hasFile('photo_path')) {
             $file = $request->file('photo_path');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('assets/restaurantPhoto'), $fileName);
+            $file->move(public_path('assets/restaurantPhoto/'), $fileName);
             $data['photo_path'] = $fileName;
         }
 

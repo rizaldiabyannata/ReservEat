@@ -9,7 +9,7 @@
 </head>
 <x-side-bar></x-side-bar>
 <div class="ml-64">
-    <x-admin-nav router='admin / adduser' titlepage='Add User'></x-admin-nav>
+    <x-admin-nav router='admin / adduser' titlepage='Add User' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
     <div class="p-4">
         <div class="container mx-auto p-4 pt-6 md:p-6 md:pt-12">
             <div class="bg-white rounded-lg p-4">

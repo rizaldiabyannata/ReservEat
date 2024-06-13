@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantMenuController extends Controller
 {
     public function index()
     {
-        $menus = Menu::where('restaurant_id', '1')->get();
+        $user = Auth::user();
+        $restaurant = Restaurant::where('user_id', $user->id)->first();
+        $menus = Menu::where('restaurant_id', $restaurant->id)->get();
         return view('restaurant.daftarmenu', compact('menus'));
     }
 
@@ -22,26 +26,32 @@ class RestaurantMenuController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string',
-            // 'photo' => 'required|image|mimes:jpg,jpeg,png',
-            'category' => 'required',
+            'path_photo_menu' => 'required|image|mimes:jpg,jpeg,png',
+            'menu_category' => 'required',
             'description' => 'required|string',
-            'stock' => 'required|integer',
             'price' => 'required|integer',
         ]);
-
         try {
             $menu = new Menu();
             $menu->name = $validatedData['name'];
-            $menu->path_photo_menu = 'dafault.jpg';
-            $menu->menu_category_id = $validatedData['category'];
+            if ($request->hasFile('path_photo_menu')) {
+                $file = $request->file('path_photo_menu');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('assets/restaurantMenu/'), $fileName);
+                $menu->path_photo_menu = $fileName;
+            }
+            $menu->menu_category = $validatedData['menu_category'];
             $menu->description = $validatedData['description'];
-            $menu->stock = $validatedData['stock'];
             $menu->price = $validatedData['price'];
-            $menu->restaurant_id = 1; // assuming the restaurant ID is 1
+            if (Auth::user()->role === 'restaurant') {
+                $user = Auth::user();
+                $restaurant = Restaurant::where('user_id', $user->id)->first();
+                $menu->restaurant_id = $restaurant->id;
+            }
             $menu->save();
 
-            notify()->success('Berhasil');
-            return redirect()->back()->with('success', 'Menu added successfully!');
+            notify()->success('Berhasil Menambahkan Menu ' . $menu->name);
+            return redirect('/restaurantadmin/daftarmenu')->with('success', 'Menu added successfully!');
         } catch (\Exception $e) {
             notify()->warning("gagal" . $e);
             return back()->withErrors(['error' => 'Error adding menu: ' . $e->getMessage()])->withInput();
@@ -61,6 +71,12 @@ class RestaurantMenuController extends Controller
         }
     }
 
+    public function editForm($id)
+    {
+        $menu = Menu::find($id);
+        return view('restaurant.formeditmenu', compact('menu'));
+    }
+
     public function update(Request $request, $id)
     {
         $menu = Menu::find($id);
@@ -70,24 +86,27 @@ class RestaurantMenuController extends Controller
 
         $validatedData = $request->validate([
             'name' => 'required|string',
-            'photo' => 'required|image|mimes:jpg,jpeg,png',
-            'category' => 'required',
+            'path_photo_menu' => 'required|image|mimes:jpg,jpeg,png',
+            'menu_category' => 'required',
             'description' => 'required|string',
-            'stock' => 'required|integer',
             'price' => 'required|integer',
         ]);
 
         try {
             $menu->name = $validatedData['name'];
-            $menu->menu_category_id = $validatedData['category'];
-            $menu->path_photo_menu = $validatedData['photo'];
+            $menu->menu_category = $validatedData['menu_category'];
+            if ($request->hasFile('path_photo_menu')) {
+                $file = $request->file('path_photo_menu');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('assets/profiles'), $fileName);
+                $menu->path_photo_menu = $fileName;
+            }
             $menu->description = $validatedData['description'];
-            $menu->stock = $validatedData['stock'];
             $menu->price = $validatedData['price'];
             $menu->save();
 
             notify()->success('Menu updated successfully!');
-            return redirect()->back()->with('success', 'Menu updated successfully!');
+            return redirect('/restaurantadmin/daftarmenu')->with('success', 'Menu updated successfully!');
         } catch (\Exception $e) {
             notify()->warning("Gagal mengupdate menu: " . $e);
             return back()->withErrors(['error' => 'Error updating menu: ' . $e->getMessage()])->withInput();

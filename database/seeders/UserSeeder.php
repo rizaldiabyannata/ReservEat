@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
         // $roles = ['admin', 'restaurant', 'customer'];
         user::create([
             'name' => 'aldi',
-            'email' => 'aldizar255@gmail.com',
+            'email' => 'aldizar25@gmail.com',
             'password' => Hash::make('password'), // A common demo password
             'role' => 'admin',
             'phone' => '0852'

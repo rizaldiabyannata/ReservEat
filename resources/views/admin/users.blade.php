@@ -17,7 +17,7 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / users' titlepage='Users'></x-admin-nav>
+        <x-admin-nav router='admin / users' titlepage='Users' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="px-4">
             <div class="grid grid-cols-2 gap-4 mb-4">
                 <div class="flex items-center justify-center h-24 rounded border bg-[#8739f9] border-gray-400">

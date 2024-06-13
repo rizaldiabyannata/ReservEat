@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MenuCategories extends Model
+class Menu_Reservations extends Model
 {
+    use HasFactory;
     protected $fillable = [
-        'category_name',
+        'menu_id',
+        'reservation_id',
+        'quantity'
     ];
-
-    public $timestamps = true;
 }

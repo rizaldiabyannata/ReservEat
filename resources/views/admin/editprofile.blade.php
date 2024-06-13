@@ -12,7 +12,7 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / editprofile' titlepage='Edit Profile'></x-admin-nav>
+        <x-admin-nav router='admin / editprofile' titlepage='Edit Profile' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="px-4">
             <div class="flex items-center justify-center p-12">
                 <div class="w-full xl:w-2/3 lg:w-3/4 md:w-4/5 sm:w-full xs:w-full pb-10">

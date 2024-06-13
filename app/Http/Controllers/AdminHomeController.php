@@ -11,10 +11,16 @@ class AdminHomeController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.home', compact('users'));
+        $authUser = Auth::user();
+        return view('admin.home', compact('users', 'authUser'));
     }
 
     public function getSessionData()
+    {
+        $authUser = Auth::user();
+        return view('components.admin-nav', compact('authUser'));
+    }
+    public function getSessionDataAPI()
     {
         $authUser = Auth::user();
         return response()->json($authUser);

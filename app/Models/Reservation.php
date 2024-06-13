@@ -16,40 +16,21 @@ class Reservation extends Model
     protected $fillable = [
         'restaurant_id',
         'user_id',
-        'menu_id',
         'status',
         'reservation_date',
         'phone_number',
         'name',
         'price',
         'payment_id',
+        'table_number',
+        'number_of_guest'
     ];
 
     protected $cast = [
         'created_at' => 'datetime:H:i:s',
-        'updated_at' => 'datetime:H:i:s',,
-        'reservation_date' => 'datetime:H:i:s',,
+        'updated_at' => 'datetime:H:i:s',
+        'reservation_date' => 'datetime:H:i:s',
     ];
-
-    public function restaurant()
-    {
-        return $this->belongsTo(Restaurant::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function menu()
-    {
-        return $this->belongsTo(Menu::class);
-    }
-
-    public function payment()
-    {
-        return $this->belongsTo(Payment::class);
-    }
 
 
     public function getCreatedAtTimeAttribute($value)
