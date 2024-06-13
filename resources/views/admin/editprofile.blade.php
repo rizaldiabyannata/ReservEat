@@ -50,7 +50,7 @@
                                 <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" class="w-full rounded-md p-2 text-sm border border-black text-black">
                             </div>
                             <div class="flex justify-end">
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Profile</button>
+                                <button type="submit" class="bg-peachy-brown hover:scale-95 text-slate-800 font-bold py-2 px-4 rounded">Update Profile</button>
                             </div>
                         </form>
                     </div>

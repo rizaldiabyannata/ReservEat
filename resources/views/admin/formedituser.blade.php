@@ -46,13 +46,13 @@
                                 <input type="password" value="{{ $user->password }}" id="password" name="password" class="w-full border border-black rounded-md p-2 text-sm text-black">
                             </div>
                             <div class="flex justify-end">
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update User</button>
+                                <button type="submit" class="bg-peachy-brown hover:scale-95 text-slate-800 font-bold py-2 px-4 rounded">Update User</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
     @include('notify::components.notify')
     @notifyJs

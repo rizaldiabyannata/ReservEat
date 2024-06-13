@@ -28,12 +28,11 @@
                     </div>
 
                     <table class="w-full text-sm text-left rounded-lg">
-                        <thead class="text-xs text-white uppercase bg-[#8739f9]">
+                        <thead class="text-xs text-slate-800 uppercase bg-slate-200">
                             <tr>
                                 <th scope="col" class="px-6 py-4 rounded-tl-lg">Nama</th>
                                 <th scope="col" class="px-6 py-4">Alamat</th>
                                 <th scope="col" class="px-6 py-4">Nomor HP</th>
-                                <th scope="col" class="px-6 py-4">Rating</th>
                                 <th scope="col" class="px-6 py-4 rounded-tr-lg">Action</th>
                             </tr>
                         </thead>
@@ -42,10 +41,9 @@
                             <tr class="border-b bg-white text-black hover:bg-[#F2F5F5]">
                                 <td class="px-6 py-4">{{ $restaurant['name'] }}</td>
                                 <td class="px-6 py-4">{{ $restaurant['address'] }}</td>
-                                <td class="px-6 py-4">{{ $restaurant['phone'] }}</td>
-                                <td class="px-6 py-4">{{ $restaurant['rating'] }}</td>
+                                <td class="px-6 py-4">{{ $restaurant['phone_number'] }}</td>
                                 <td class="px-6 py-4 flex flex-row space-x-2">
-                                    <a href="{{'/admin/editrestaurant/form/'. $restaurant['id']}}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#8739f9] hover:bg-[#7849d8]">
+                                    <a href="{{'/admin/editrestaurant/form/'. $restaurant['id']}}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-slate-800 bg-peachy-brown hover:bg-[#7849d8]">
                                         Edit
                                     </a>
 

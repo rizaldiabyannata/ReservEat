@@ -23,31 +23,31 @@
         <div class="container mx-auto p-4">
             <h1 class="text-3xl font-bold mb-8">Review Restaurant</h1>
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                @foreach($reviews as $review)
                 <div class="flex mb-4">
-                    <div class="w-1/6">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3jjCyfj9RJknvO87B6kPMRxrjJY6aa_1xMw&s" alt="foro" class="w-12 h-12 rounded-full">
-                    </div>
                     <div class="w-5/6">
-                        <p class="font-bold">aldi</p>
-                        <p class="text-gray-600">restoran arion sangat mnnearik karna berisikan para wibu yang suka dengan tate no yiusa yang sanget gemot dan ada juga ri,muru disanaa walaupun makanannnya biasa aja .</p>
-                        <p class="text-xs text-gray-400">Posted 2 hours ago</p>
+                        <p class="font-bold m-0">{{ $review->user->name }}</p>
+                        <p class="font-bold">Rating: {{ $review->rating }}/5</p>
+                        <p class="text-gray-600">{{$review->review_text}}</p>
                     </div>
                 </div>
 
                 <!-- Form untuk Menambah Review -->
-                <form class="mt-4">
+                <form method="POST" action="{{'/restaurantadmin/review-customer/'. $review->id}}">
+                    @csrf
                     <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="reply_text">
                             Replay Review
                         </label>
-                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="review" placeholder="Your Replay"></textarea>
+                        <textarea name="replay_text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="reply_text" placeholder="Your Replay"></textarea>
                     </div>
                     <div class="bg-[#F5D0A9] w-32 flex justify-center hover:scale-105 transition-all duration-300 ease-in-out text-black font-bold py-2 px-4 rounded">
-                        <button type="button">
+                        <button type="submit">
                             balasan
                         </button>
                     </div>
                 </form>
+                @endforeach
             </div>
         </div>
 </body>

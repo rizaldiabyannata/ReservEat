@@ -46,4 +46,11 @@ class Reservation extends Model
     {
         return Carbon::parse($value)->format('H:i:s');
     }
+
+    public function getReservationsTodayAttribute()
+    {
+        $today = Carbon::today();
+        $todayReservations = Reservation::whereDate('created_at', $today->format('Y-m-d'))->count();
+        return $todayReservations;
+    }
 }

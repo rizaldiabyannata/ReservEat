@@ -14,73 +14,25 @@
         <div class="sm:mx-auto sm:w-full sm:max-w-lg">
             <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">History</h2>
         </div>
-        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg font-['Quicksand']">
-            <div tabindex="0" class="collapse collapse-arrow border-b border-gray-300 py-4">
-                <div class="collapse-title text-xl font-medium flex justify-between items-center">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900">Restaurant A</h3>
-                        <p class="text-sm text-gray-600">Date at Time</p>
-                        <p class="text-sm text-gray-600">Guests: 2</p>
+        <div class="mt-10 sm:w-full sm:max-w-lg font-['Quicksand']">
+            <div class="w-lvw pr-80 collapse collapse-arrow border-gray-300 py-4">
+                <div class="w-full text-xl gap-4 font-medium grid grid-cols-3 items-center">
+                    @foreach($reservations as $reservation)
+                    <div class="w-full h-full border p-2 rounded-lg">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Restaurant: {{ $reservation->restaurant_name }}</h3>
+                            <p class="text-sm text-gray-600">Reservation Date : {{ $reservation->reservation_date }}</p>
+                            <p class="text-sm text-gray-600">Guests: {{ $reservation->number_of_guest }}</p>
+                            <p class="text-sm text-gray-600">Status: {{ $reservation->status }}</p>
+                        </div>
+                        @if($reservation->status == 'payment')
+                        <div class="w-full my-4">
+                            <a href="{{ '/restaurants/' . $reservation->restaurant_id . '/review' }}" class="w-full py-2 px-4 rounded-lg text-center bg-peachy-brown hover:sc">Review</a>
+                        </div>
+                        @endif
                     </div>
-                    <div class="flex flex-col items-end">
-                        <button class="text-blue-500 hover:text-blue-700" onclick="my_modal_2.showModal()">Add Review</button>
-                        <dialog id="my_modal_2" class="modal">
-                            <div class="modal-box">
-                                <h3 class="text-center font-bold text-lg p-3">Put Your Reviews!</h3>
-                                <div class="rating">
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                    <input type="radio" name="rating-1" class="mask mask-star" checked />
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                </div>
-                                <textarea class="textarea textarea-bordered textarea-lg w-full" placeholder="Review"></textarea>
-                                <div class="modal-action">
-                                    <form method="dialog">
-                                        <button class="btn">Add Review</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </dialog>
-                    </div>
-                </div>
-                <div class="collapse-content">
-                    <p>Menu A :</p>
-                    <p>Menu B :</p>
-                </div>
-            </div>
-            <div tabindex="0" class="collapse collapse-arrow border-b border-gray-300 py-4">
-                <div class="collapse-title text-xl font-medium flex justify-between items-center">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900">Restaurant B</h3>
-                        <p class="text-sm text-gray-600">Date at Time</p>
-                        <p class="text-sm text-gray-600">Guests: 4</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <button class="text-blue-500 hover:text-blue-700" onclick="my_modal_1.showModal()">Add Review</button>
-                        <dialog id="my_modal_1" class="modal">
-                            <div class="modal-box">
-                                <h3 class="text-center font-bold text-lg p-3">Put Your Reviews!</h3>
-                                <div class="rating">
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                    <input type="radio" name="rating-1" class="mask mask-star" checked />
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                    <input type="radio" name="rating-1" class="mask mask-star" />
-                                </div>
-                                <textarea class="textarea textarea-bordered textarea-lg w-full" placeholder="Review"></textarea>
-                                <div class="modal-action">
-                                    <form method="dialog">
-                                        <button class="btn">Add Review</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </dialog>
-                    </div>
-                </div>
-                <div class="collapse-content">
-                    <p>Menu A :</p>
-                    <p>Menu B :</p>
+                    @endforeach
+
                 </div>
             </div>
         </div>

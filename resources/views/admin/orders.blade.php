@@ -14,14 +14,14 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / Orders' titlepage='Orders'></x-admin-nav>
+        <x-admin-nav router='admin / Orders' titlepage='Orders' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="px-4">
             <div class="grid grid-cols-2 gap-4 mb-4">
                 <div class="flex items-center justify-center h-24 rounded border border-gray-400">
                     <div class="w-full flex flex-row justify-between px-10">
                         <div class="flex flex-col">
                             <p class="text-xs">Reservation Today</p>
-                            <h4 class="text-2xl">2</h4>
+                            <h4 class="text-2xl">{{$reservationsToday}}</h4>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
                             <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
@@ -32,7 +32,7 @@
                     <div class="w-full flex flex-row justify-between px-10">
                         <div class="flex flex-col">
                             <p class="text-xs">Total Reservation</p>
-                            <h4 class="text-2xl">10</h4>
+                            <h4 class="text-2xl">{{@count($orders)}}</h4>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
                             <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
@@ -40,9 +40,6 @@
                         </svg>
                     </div>
                 </div>
-            </div>
-            <div class="">
-                <canvas class="w-1/2 h-1/2" id="orders-chart"></canvas>
             </div>
             <div class="overflow-x-auto sm:rounded-lg py-4">
                 <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white ">
@@ -57,139 +54,30 @@
                     </div>
                 </div>
                 <table class="w-full text-sm text-left text-black rounded-lg">
-                    <thead class="text-xs text-black uppercase bg-[#5AB2FF]">
+                    <thead class="text-xs text-black uppercase bg-slate-200">
                         <tr>
                             <th scope="col" class="px-6 py-3 rounded-tl-lg">Reservation By</th>
                             <th scope="col" class="px-6 py-3">Restaurant</th>
                             <th scope="col" class="px-6 py-3">Number Of People</th>
                             <th scope="col" class="px-6 py-3">Create At</th>
-                            <th scope="col" class="px-6 py-3">Time Reservation</th>
-                            <th scope="col" class="px-6 py-3">Desc</th>
-                            <th scope="col" class="px-6 py-3 rounded-tr-lg">Action</th>
+                            <th scope="col" class="px-6 py-3 rounded-tr-lg">Time Reservation</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($orders as $order)
-                        <tr class="border-b  bg-[#CAF4FF] hover:bg-[#A0DEFF]">
-                            <td class="px-6 py-4">{{$order['reservation_by']}}</td>
-                            <td class="px-6 py-4">{{$order['restaurant']}}</td>
-                            <td class="px-6 py-4">{{$order['number_of_people']}}</td>
+                        <tr class="border-b">
+                            <td class="px-6 py-4">{{$order->user_name }}</td>
+                            <td class="px-6 py-4">{{$order->restaurant_name }}</td>
+                            <td class="px-6 py-4">{{$order->number_of_guest}}</td>
                             <td class="px-6 py-4">{{$order['created_at']}}</td>
-                            <td class="px-6 py-4">{{$order['time_reservation']}}</td>
-                            <td class="px-6 py-4">{{$order['details']}}</td>
-                            <td class="px-6 py-4">
-                                <button class="btn" type="button" data-toggle="modal" data-target="#view-detail-{{ $order['id']}}" onclick="openModal(`{{ $order['id'] }}`)">View Details</button>
-                            </td>
+                            <td class="px-6 py-4">{{$order->reservation_date }}</td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <div class="modal hidden" id="view-detail-{{ $order['id'] }}" tabindex="-1" aria-labelledby="view-detail-{{ $order['id'] }}Label" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="view-detail-{{ $order['id'] }}Label">Order Details</h5>
-                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Reservation By: {{ $order['reservation_by'] }}</p>
-                                <p>Restaurant: {{ $order['restaurant'] }}</p>
-                                <p>Number of People: {{ $order['number_of_people'] }}</p>
-                                <p>Created At: {{ $order['created_at'] }}</p>
-                                <p>Time Reservation: {{ $order['time_reservation'] }}</p>
-                                <p>Desc: {{ $order['details'] }}</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- <div class="w-full h-lvh relative z-10 flex justify-center bg-slate-300">
-            <div class="flex flex-col space-y-4">
-            </div>
-        </div> -->
     </div>
-    <script>
-        const ctx = document.getElementById('orders-chart').getContext('2d');
-        const apiUrl = 'http://localhost:8000/api/getorders';
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const labels = [];
-                const datasets = [];
-
-                data.forEach(item => {
-                    const date = item.created_at.split(' ')[0].split('-')[2]; // extract day of the month
-                    labels.push(date);
-
-                    const peopleCount = item.number_of_people;
-                    const existingDataset = datasets.find(dataset => dataset.label === 'Jumlah Orang');
-                    if (existingDataset) {
-                        existingDataset.data[date - 1] = (existingDataset.data[date - 1] || 0) + peopleCount;
-                    } else {
-                        datasets.push({
-                            label: 'Jumlah Orang',
-                            data: new Array(31).fill(0),
-                            borderWidth: 1
-                        });
-                        datasets[0].data[date - 1] = peopleCount;
-                    }
-                });
-
-                const maxDate = Math.max(...data.map(item => parseInt(item.created_at.split('-')[2])));
-                const chartData = {
-                    labels: Array.from({
-                        length: maxDate
-                    }, (_, i) => i + 1),
-                    datasets
-                };
-
-                const options = {
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Jumlah Reservasi Bulan Januari',
-                            font: {
-                                size: 16
-                            }
-                        },
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                display: false,
-                            }
-                        },
-                        x: {
-                            beginAtZero: true,
-                            grid: {
-                                display: false,
-                            }
-                        }
-                    }
-                };
-
-                const reservasiChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: chartData,
-                    options
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-
-        function openModal(id) {
-            const modal = document.getElementById($(`#view-detail-${id}`))
-            modal.classList.add('block')
-        }
-    </script>
     @include('notify::components.notify')
     @notifyJs
 </body>

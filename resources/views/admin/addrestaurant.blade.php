@@ -115,7 +115,7 @@
                         @enderror
                     </div>
                     <div class="flex justify-end">
-                        <button class="bg-[#8739f9] hover:bg-[#37B9F1] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                        <button class="bg-peachy-brown hover:bg-[#37B9F1] text-slate-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Add Restaurant
                         </button>
                     </div>

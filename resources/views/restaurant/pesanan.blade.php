@@ -37,72 +37,63 @@
                                         <tr>
                                             <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> nama </th>
                                             <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> nomor invoice </th>
-                                            <th class="px-6 py-3 pl-2 font-bold tex-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> nomor meja </th>
                                             <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> jumlah orang </th>
+                                            <th class="px-6 py-3 pl-2 font-bold tex-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> nomor meja </th>
+                                            <th class="px-6 py-3 pl-2 font-bold tex-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> status </th>
                                             <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> tanggal reservasi </th>
                                             <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> tagihan </th>
-                                            <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> pembayaran via</th>
-                                            <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"> status pembayaran</th>
-                                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Status</th>
-                                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70"></th>
-                                            <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70"></th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($reservations as $reservation)
                                         <tr>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                 <div class="flex px-2 py-1">
                                                     <div class="flex flex-col justify-center">
-                                                        <h6 class="mb-0 text-sm leading-normal">ario</h6>
+                                                        <h6 class="mb-0 text-sm leading-normal">{{$reservation->user_name}}</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                 <div class="flex flex-col justify-center w-full items-center">
-                                                    <p class="mb-0 text-xs leading-tight text-slate-400">ario12bbda773</p>
+                                                    <p class="mb-0 text-xs leading-tight text-slate-400">{{$reservation->user_email}}</p>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                 <div class="flex flex-col justify-center w-full items-center">
-                                                    <p class="mb-0 text-xs font-semibold leading-tight">10</p>
+                                                    <p class="mb-0 text-xs font-semibold leading-tight">{{$reservation->number_of_guest}}</p>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                 <div class="flex flex-col justify-center w-full items-center">
-                                                    <p class="mb-0 text-xs font-semibold leading-tight">8</p>
+                                                    <p class="mb-0 text-xs font-semibold leading-tight">{{$reservation->table_number}}</p>
                                                 </div>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                 <div class="flex flex-col justify-center w-full items-center">
-                                                    <p class="mb-0 text-xs font-semibold leading-tight">2/11/2024</p>
+                                                    <p class="mb-0 text-xs font-semibold leading-tight">{{$reservation->status}}</p>
+                                                </div>
+                                            </td>
+                                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                                <div class="flex flex-col justify-center w-full items-center">
+                                                    <p class="mb-0 text-xs font-semibold leading-tight">{{$reservation->reservation_date}}</p>
                                                 </div>
                                             </td>
                                             </td>
                                             <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                 <div class="flex flex-col justify-center w-full items-center">
-                                                    <p class="mb-0 text-xs font-semibold leading-tight">Rp.5.000.000</p>
+                                                    <p class="mb-0 text-xs font-semibold leading-tight">{{$reservation->price}}</p>
                                                 </div>
-                                            </td>
-                                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                                <div class="flex flex-col justify-center w-full items-center">
-                                                    <p class="mb-0 text-xs font-semibold leading-tight">DANA</p>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                                <div class="flex flex-col justify-center w-full items-center">
-                                                    <p class="mb-0 text-xs font-semibold leading-tight">terbayar</p>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                                <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">ready</span>
                                             </td>
                                             <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                                <a class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Delete</a>
-                                            </td>
-                                            <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                                <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
+                                                <form action="{{'/restaurants/reservation/' . $reservation->id . '/cencel'}}" method="post">
+                                                    @csrf
+                                                    <button type="submit" class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;">Delete</button>
+                                                </form>
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

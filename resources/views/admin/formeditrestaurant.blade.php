@@ -53,7 +53,7 @@
                                 </select>
                             </div>
                             <div class="flex justify-end">
-                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Restaurant</button>
+                                <button type="submit" class="bg-peachy-brown hover:scale-95 text-slate-800 font-bold py-2 px-4 rounded">Update Restaurant</button>
                             </div>
                         </form>
                     </div>

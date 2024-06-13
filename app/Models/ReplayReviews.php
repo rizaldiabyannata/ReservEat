@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Replay_Review extends Model
+class ReplayReviews extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'review_id',
         'restaurant_id',
@@ -14,14 +15,4 @@ class Replay_Review extends Model
     ];
 
     public $timestamps = true;
-
-    public function review()
-    {
-        return $this->belongsTo(Reviews::class);
-    }
-
-    public function restaurant()
-    {
-        return $this->belongsTo(Restaurant::class);
-    }
 }

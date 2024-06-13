@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
+use App\Models\Restaurant;
 use App\Models\Restaurant_categories;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
 class AdminCategoryController extends Controller
@@ -13,17 +16,20 @@ class AdminCategoryController extends Controller
     public function index()
     {
         $categories = restaurant_categories::all();
-        return view('admin.categorys', compact('categories'));
+        $authUser = Auth::user();
+        return view('admin.categorys', compact('categories', 'authUser'));
     }
 
     public function tableList()
     {
+        $authUser = Auth::user();
         return view('admin.listCategoryRestaurant');
     }
 
     public function addcategory()
     {
-        return view('admin.addcategory');
+        $authUser = Auth::user();
+        return view('admin.addcategory', compact('authUser'));
     }
 
     public function create(Request $request): RedirectResponse
@@ -52,16 +58,18 @@ class AdminCategoryController extends Controller
 
     public function editCategory()
     {
+        $authUser = Auth::user();
         $categories = restaurant_categories::all();
-        return view('admin.editcategory', compact('categories'));
+        return view('admin.editcategory', compact('categories', 'authUser'));
     }
 
 
     public function formedit($id)
     {
+        $authUser = Auth::user();
         $category = Restaurant_categories::find($id);
         if ($category) {
-            return view('admin.formeditcategory', compact('category'));
+            return view('admin.formeditcategory', compact('category', 'authUser'));
         } else {
             notify()->warning('Tidak Menemukan ' . $category['category_name']);
             return redirect()->back()->with('error', 'Category not found');
@@ -111,6 +119,19 @@ class AdminCategoryController extends Controller
         } else {
             notify()->warning('Menghapus Gagal');
             return redirect()->back()->with('error', 'Category not found');
+        }
+    }
+
+    public function bycategory($name)
+    {
+        $authUser = Auth::user();
+        $category = Restaurant_categories::where('category_name', $name)->first();
+        $reservations = Reservation::all();
+        if ($category) {
+            $restaurants = Restaurant::where('category_id', $category->id)->get();
+            return view('admin.restaurantlistcategory', compact('category', 'restaurants', 'authUser', 'reservations'));
+        } else {
+            return redirect()->back();
         }
     }
 }

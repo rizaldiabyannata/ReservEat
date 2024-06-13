@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use App\Models\Restaurant;
 use App\Models\Restaurant_categories;
 use App\Models\Reviews;
@@ -18,13 +19,14 @@ class AdminRestaurantController extends Controller
         $restaurants = Restaurant::all();
         $restaurantsWithRatings = [];
         $authUser = Auth::user();
+        $reservations = Reservation::all();
         foreach ($restaurants as $restaurant) {
             $avg_rating = Reviews::where('restaurant_id', $restaurant->id)
                 ->avg('rating');
             $restaurant->average_rating = $avg_rating;
             $restaurantsWithRatings[] = $restaurant;
         }
-        return view('admin.restaurants', compact('restaurantsWithRatings', 'authUser'));
+        return view('admin.restaurants', compact('restaurantsWithRatings', 'authUser', 'reservations'));
     }
 
     public function getRestaurants()
@@ -85,7 +87,7 @@ class AdminRestaurantController extends Controller
             }
 
             $restaurant->save();
-            
+
             notify()->success('Berhasil Mengupdate restaurant ' . $restaurant['name']);
             return redirect('admin/restaurants');
         } else {

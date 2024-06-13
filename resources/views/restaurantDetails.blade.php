@@ -54,37 +54,18 @@
         <!-- Customer Reviews -->
         <div class="bg-white p-6 rounded-lg shadow-md mb-20">
             <h3 class="text-2xl font-semibold mb-4">Customer Reviews</h3>
-
+            @foreach($reviews as $review)
             <div class="collapse collapse-arrow bg-base-200 mb-4">
                 <input type="radio" name="my-accordion-2" id="review1" checked />
                 <div class="collapse-title flex justify-between items-center">
-                    <span class="text-xl font-medium">John Doe</span>
-                    <span class="text-gray-700">Rating: 4/5</span>
+                    <span class="text-xl font-medium">{{ $review->user->name }}</span>
+                    <span class="text-gray-700">Rating: {{$review->rating}}/5</span>
                 </div>
                 <div class="collapse-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                    <p>{{$review->review_text}}</p>
                 </div>
             </div>
-            <div class="collapse collapse-arrow bg-base-200 mb-4">
-                <input type="radio" name="my-accordion-2" id="review1" checked />
-                <div class="collapse-title flex justify-between items-center">
-                    <span class="text-xl font-medium">Jane Smith</span>
-                    <span class="text-gray-700">Rating: 3.5/5</span>
-                </div>
-                <div class="collapse-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-                </div>
-            </div>
-            <div class="collapse collapse-arrow bg-base-200 mb-4">
-                <input type="radio" name="my-accordion-2" id="review1" checked />
-                <div class="collapse-title flex justify-between items-center">
-                    <span class="text-xl font-medium">Michael Johnson</span>
-                    <span class="text-gray-700">Rating: 3/5</span>
-                </div>
-                <div class="collapse-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <footer class="footer p-10 bg-[#FAE8DC] text-black">

@@ -11,8 +11,8 @@
 <body class="font-['Montserrat']">
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / editcategory / form' titlepage='Form Update'></x-admin-nav>
-        <div class="px-4">
+        <x-admin-nav router='admin / editcategory / form' titlepage='Form Update' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
+        <div class=" px-4">
             <div class="flex items-center justify-center p-12">
                 <div class="w-full pb-10">
                     <div class="bg-white p-4 rounded-lg shadow-md flex flex-row space-x-4 items-center">

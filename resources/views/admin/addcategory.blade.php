@@ -15,7 +15,7 @@
 <body>
     <x-side-bar></x-side-bar>
     <div class="ml-64">
-        <x-admin-nav router='admin / addcategory' titlepage='Add Category'></x-admin-nav>
+        <x-admin-nav router='admin / addcategory' titlepage='Add Category' photo="{{ URL::to('/assets/profiles/' . $authUser['photo'])}}"></x-admin-nav>
         <div class="p-4">
             <!-- form add category -->
             <form method="POST" action="/admin/addcategory" enctype="multipart/form-data">
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <button type="submit" class="bg-[#8739f9] text-white hover:bg-[#784bff] py-2 px-4 rounded-lg">Tambah Kategori</button>
+                    <button type="submit" class="bg-peachy-brown text-slate-800 py-2 px-4 rounded-lg">Tambah Kategori</button>
                 </div>
             </form>
         </div>

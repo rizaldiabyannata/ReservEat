@@ -16,20 +16,32 @@
             <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Your Order</h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg font-['Quicksand']">
-            <div tabindex="0" class="border collapse collapse-arrow border-b border-gray-300 py-4">
-                <div class="collapse-title text-xl font-medium flex justify-between items-center">
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900">Restaurant B</h3>
-                        <p class="text-sm text-gray-600">Date at Time</p>
-                        <p class="text-sm text-gray-600">Guests: 4</p>
+            <div class="collapse collapse-arrow border-gray-300 py-4">
+                <div class=" text-xl space-y-4 font-medium flex flex-col items-center">
+                    @foreach($reservations as $reservation)
+                    <div class="border p-2 rounded-lg ">
+                        <div class="">
+                            <h3 class="text-lg font-bold text-gray-900">Restaurant: {{$reservation->restaurant_name}}</h3>
+                            <p class="text-sm text-gray-600">Reservation Date :{{$reservation->reservation_date}}</p>
+                            <p class="text-sm text-gray-600">Guests: {{$reservation->number_of_guest}}</p>
+                            <p class="text-sm text-gray-600">Price: {{$reservation->price}}</p>
+                        </div>
+                        <div class="flex flex-row justify-between px-2">
+                            <form action="{{'/restaurants/reservation/' . $reservation->id . '/payment'}}" method="post">
+                                @csrf
+                                <div class="flex flex-col items-end">
+                                    <button type="submit" class="text-orange-500 hover:text-orange-700 mb-2 hover:scale-95">Payment</button>
+                                </div>
+                            </form>
+                            <form action="{{'/restaurants/reservation/' . $reservation->id . '/cencel'}}" method="post">
+                                @csrf
+                                <div class="flex flex-col items-end">
+                                    <button type="submit" class="text-red-500 hover:text-red-700 mb-2 hover:scale-95">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="flex flex-col items-end">
-                        <button class="text-red-500 hover:text-red-700 mb-2 hover:scale-95">Cancel</button>
-                    </div>
-                </div>
-                <div class="collapse-content mt-2">
-                    <p>Menu A :</p>
-                    <p>Menu B :</p>
+                    @endforeach
                 </div>
             </div>
             <div class="mt-6">

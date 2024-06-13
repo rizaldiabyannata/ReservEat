@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use App\Models\User;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
@@ -21,15 +22,29 @@ class ClientProfileController extends Controller
         $user = Auth::user();
         return view('editProfile', compact('user'));
     }
+
     public function reservation()
     {
         $user = Auth::user();
-        return view('reservationOrder', compact('user'));
+        $reservations = Reservation::join('users', 'reservations.user_id', '=', 'users.id')
+            ->join('restaurants', 'reservations.restaurant_id', '=', 'restaurants.id')
+            ->where('reservations.user_id', $user->id)
+            ->where('status', 'pending') // Move this where clause up here
+            ->select('reservations.*', 'users.name as user_name', 'restaurants.name as restaurant_name')
+            ->get();
+        return view('reservationOrder', compact('user', 'reservations'));
     }
+
 
     public function history()
     {
-        return view('history');
+        $user = Auth::user();
+        $reservations = Reservation::join('users', 'reservations.user_id', '=', 'users.id')
+            ->join('restaurants', 'reservations.restaurant_id', '=', 'restaurants.id')
+            ->where('reservations.user_id', $user->id)
+            ->select('reservations.*', 'users.name as user_name', 'restaurants.name as restaurant_name')
+            ->get();
+        return view('history', compact('user', 'reservations'));
     }
 
     public function updateProfile(Request $request)
@@ -60,12 +75,37 @@ class ClientProfileController extends Controller
                 $file->move(public_path('assets/profiles'), $fileName);
                 $data['photo'] = $fileName;
             }
+
             $user->update($data);
             notify()->success('Berhasil Update ' . $data['name']);
             return redirect('/profile')->with('success', 'User updated successfully');
         } catch (ValidationException $e) {
             notify()->warning('Gagal Update ' . $data['name']);
             return redirect()->back()->with($e);
+        }
+    }
+
+    public function cancelReservation(Request $request, $id)
+    {
+        $reservation = Reservation::find($id);
+        if ($reservation) {
+            $reservation->status = 'cancelled';
+            $reservation->save();
+            return redirect()->back()->with('success', 'Reservation cancelled successfully');
+        } else {
+            return redirect()->back()->with('error', 'Reservation not found');
+        }
+    }
+
+    public function paymentReservation(Request $request, $id)
+    {
+        $reservation = Reservation::find($id);
+        if ($reservation) {
+            $reservation->status = 'payment';
+            $reservation->save();
+            return redirect()->back()->with('success', 'Reservation cancelled successfully');
+        } else {
+            return redirect()->back()->with('error', 'Reservation not found');
         }
     }
 }

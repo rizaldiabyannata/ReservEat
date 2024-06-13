@@ -30,8 +30,12 @@ Route::get('/restaurants', [ClientRestaurantsController::class, 'index']);
 Route::get('/restaurants/{name}', [ClientRestaurantsController::class, 'bycategory']);
 Route::get('/menus', [ClientRestaurantsController::class, 'menu']);
 Route::get('/restaurants/{id}/detail', [ClientRestaurantsController::class, 'detail']);
+Route::get('/restaurants/{id}/review', [ClientRestaurantsController::class, 'review']);
+Route::post('/restaurants/{id}/review/post', [ClientRestaurantsController::class, 'reviewPost']);
 Route::get('/restaurants/{id}/reservation', [ClientRestaurantsController::class, 'reservation']);
 Route::post('/restaurants/{id}/reservation', [ClientRestaurantsController::class, 'reservationStore']);
+Route::post('/restaurants/reservation/{id}/cencel', [ClientProfileController::class, 'cancelReservation']);
+Route::post('/restaurants/reservation/{id}/payment/', [ClientProfileController::class, 'paymentReservation']);
 Route::get('/profile', [ClientProfileController::class, 'index']);
 Route::get('/profile/edit', [ClientProfileController::class, 'editprofile']);
 Route::patch('/profile/edit', [ClientProfileController::class, 'updateProfile']);
@@ -49,6 +53,7 @@ Route::patch('/admin/edituser/form/{id}', [AdminUserController::class, 'update']
 Route::delete('/admin/user/delete/{id}', [AdminUserController::class, "destroy"])->middleware('IsAdmin');
 
 Route::get('/admin/categorys', [AdminCategoryController::class, 'index'])->middleware('IsAdmin');
+Route::get('/admin/category/{name}', [AdminCategoryController::class, 'bycategory']);
 Route::get('/admin/addcategory', [AdminCategoryController::class, 'addCategory'])->middleware('IsAdmin');
 Route::post('/admin/addcategory', [AdminCategoryController::class, 'create'])->middleware('IsAdmin');
 Route::get('/admin/editcategory', [AdminCategoryController::class, 'editCategory'])->middleware('IsAdmin');
@@ -86,6 +91,7 @@ Route::delete('/restaurantadmin/{id}/deletemenu', [RestaurantMenuController::cla
 Route::get('/restaurantadmin/pesanan', [RestaurantPesananController::class, 'Pesanan']);
 Route::get('/restaurantadmin/daftarmenu', [RestaurantMenuController::class, 'index']);
 Route::get('/restaurantadmin/review-customer', [RestaurantReviewCustomerController::class, 'reviewCustomer']);
+Route::post('/restaurantadmin/review-customer/{id}', [RestaurantReviewCustomerController::class, 'replay']);
 Route::get('/restaurantadmin/profileresto', [RestaurantProfilerestoController::class, 'profileresto']);
 
 Route::get('/login', [LoginController::class, 'index']);

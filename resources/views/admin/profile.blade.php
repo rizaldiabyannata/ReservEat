@@ -38,7 +38,7 @@
             </div>
             <div>
                 <a href="{{'/admin/editprofile/' . $user->id}}" class="flex justify-end m-10">
-                    <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Profile</div>
+                    <div class="bg-peachy-brown hover:scale-95 text-slate-800 font-bold py-2 px-4 rounded">Update Profile</div>
                 </a>
             </div>
         </div>

@@ -7,6 +7,7 @@ use App\Models\Menu_Reservations;
 use App\Models\Reservation;
 use App\Models\Restaurant;
 use App\Models\Restaurant_categories;
+use App\Models\Reviews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,13 @@ class ClientRestaurantsController extends Controller
         $restaurant = Restaurant::find($id);
         $category = Restaurant_categories::find($restaurant['category_id']);
         $menus = Menu::where('restaurant_id', $restaurant->id)->get();
-        return view('restaurantDetails', compact('restaurant', 'category', 'menus'));
+        $user = Auth::user();
+        $reviews = Reviews::join('restaurants', 'reviews.restaurant_id', '=', 'restaurants.id')
+            ->join('users', 'reviews.user_id', '=', 'users.id')
+            ->where('restaurants.id', $restaurant->id)
+            ->select('reviews.*', 'users.name as user_name', 'restaurants.name as restaurant_name')
+            ->get();
+        return view('restaurantDetails', compact('restaurant', 'category', 'menus', 'reviews'));
     }
 
     public function menu()
@@ -96,14 +103,17 @@ class ClientRestaurantsController extends Controller
         $reservation->number_of_guest = $validatedData['guests'];
         $reservation->status = 'pending';
         $reservation->phone_number = Auth::user()->phone;
+        $reservation->price = 50000 * $validatedData['guests'];
 
         // Try to save the reservation
         if ($reservation->save()) {
             // Success!
             notify()->success('Berhasil Membuat Reservasi!, Lanjut Menambahakan Menu');
+            return redirect()->back();
         } else {
             // Failure
             notify()->error('Gagal membuat reservasi. Silakan coba lagi!');
+            return redirect()->back();
         }
     }
 
@@ -117,5 +127,36 @@ class ClientRestaurantsController extends Controller
         } else {
             return redirect()->back();
         }
+    }
+
+    public function review($id)
+    {
+        $restaurant = Restaurant::find($id);
+        return view('review', compact('restaurant'));
+    }
+
+    public function reviewPost(Request $request, $restaurantId)
+    {
+        // Validate the request
+        $request->validate([
+            'review' => 'required|string',
+            'rating' => 'required|integer|min:1|max:5',
+        ]);
+
+        // Get the restaurant instance
+        $restaurant = Restaurant::find($restaurantId);
+
+        // Create a new review
+        $review = new Reviews();
+        $review->user_id = Auth::user()->id;
+        $review->restaurant_id = $restaurant->id;
+        $review->review_text = $request->input('review');
+        $review->rating = $request->input('rating');
+        $review->save();
+
+        // Success!
+        notify()->success('Review submitted successfully!');
+
+        return redirect()->back();
     }
 }
